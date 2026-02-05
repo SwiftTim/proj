@@ -4,3 +4,17 @@ pdfplumber==0.11.4
 pandas==2.2.3
 python-multipart==0.0.20
 Pillow==11.1.0
+python-dotenv==1.0.0
+openai==1.6.1
+pymupdf4llm==0.0.17
+pypdf==5.1.0
+google-generativeai==0.8.3
+groq
+pdf2image==1.17.0
+requests==2.31.0
+docling
+docling-ibm-models
+apscheduler==3.10.4
+pytz==2024.1
+psycopg2-binary==2.9.9
+

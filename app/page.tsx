@@ -1,43 +1,83 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { BarChart3, ArrowRight, CheckCircle, Globe, FileText, TrendingUp, Eye } from "lucide-react"
+import { BarChart3, ArrowRight, Globe, Shield, Zap } from "lucide-react"
 import Link from "next/link"
+import { KenyaMap } from "@/components/landing-page/kenya-map"
+import { LiveTicker } from "@/components/landing-page/live-ticker"
+import { InsightCarousel } from "@/components/landing-page/insight-carousel"
+import { CountySpotlight } from "@/components/landing-page/county-cards"
+import { WhyItMatters } from "@/components/landing-page/why-it-matters"
 
 export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false)
+  const scrollSpeed = useRef(0)
+  const animationFrameId = useRef<number | null>(null)
 
   useEffect(() => {
     setIsVisible(true)
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const h = window.innerHeight
+      const y = e.clientY
+      const zone = h * 0.15 // 15% trigger zone
+
+      if (y < zone) {
+        // Top zone: speed proportional to closeness to top
+        scrollSpeed.current = -1 * (1 - y / zone) * 15
+      } else if (y > h - zone) {
+        // Bottom zone: speed proportional to closeness to bottom
+        scrollSpeed.current = (1 - (h - y) / zone) * 15
+      } else {
+        scrollSpeed.current = 0
+      }
+    }
+
+    const scrollLoop = () => {
+      if (Math.abs(scrollSpeed.current) > 0.1) {
+        window.scrollBy({ top: scrollSpeed.current, behavior: "auto" as any }) // using auto for instant updates in loop
+      }
+      animationFrameId.current = requestAnimationFrame(scrollLoop)
+    }
+
+    window.addEventListener("mousemove", handleMouseMove)
+    animationFrameId.current = requestAnimationFrame(scrollLoop)
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove)
+      if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current)
+    }
   }, [])
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#020617] text-slate-50 font-sans selection:bg-blue-500/30">
       {/* Navigation */}
-      <nav className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
+      <nav className="border-b border-slate-800/50 bg-slate-950/50 backdrop-blur-xl sticky top-0 z-50">
+        <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <BarChart3 className="h-8 w-8 text-accent" />
-              <span className="text-xl font-bold">BudgetAI</span>
+            <div className="flex items-center space-x-3">
+              <div className="bg-blue-600 p-2 rounded-lg">
+                <BarChart3 className="h-6 w-6 text-white" />
+              </div>
+              <span className="text-xl font-bold tracking-tight">BudgetAI <span className="text-blue-500">2.0</span></span>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
-                Features
+              <Link href="#impact" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">
+                Impact
               </Link>
-              <Link href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-                Pricing
+              <Link href="#data" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">
+                Data
               </Link>
-              <Link href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
-                About
+              <Link href="#why" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">
+                Why BudgetAI
               </Link>
-              <Button variant="outline" size="sm" asChild>
+              <div className="h-4 w-[1px] bg-slate-800" />
+              <Button variant="ghost" size="sm" className="text-slate-300" asChild>
                 <Link href="/dashboard">Sign In</Link>
               </Button>
-              <Button size="sm" asChild>
+              <Button size="sm" className="bg-blue-600 hover:bg-blue-500 text-white border-none shadow-lg shadow-blue-900/20" asChild>
                 <Link href="/dashboard">Get Started</Link>
               </Button>
             </div>
@@ -46,376 +86,151 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 gradient-bg">
-        <div className="container mx-auto px-4 text-center">
-          <div
-            className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-          >
-            <Badge variant="secondary" className="mb-6 bg-accent/10 text-accent border-accent/20">
-              <Globe className="h-3 w-3 mr-1" />
-              Trusted by 50+ Government Agencies
-            </Badge>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
-              The most powerful platform for <span className="text-accent">budget transparency</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto text-balance">
-              Transform government budget documents into actionable insights with AI-powered analysis, automated
-              transparency scoring, and real-time monitoring.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8" asChild>
-                <Link href="/subscribe">
-                  Start Free Trial
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
-                View Demo
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="relative pt-20 pb-0 overflow-hidden">
+        {/* Background Decorative Elements */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] bg-gradient-to-b from-blue-600/10 via-transparent to-transparent pointer-events-none -z-10" />
+        <div className="absolute top-40 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
 
-      {/* Social Proof */}
-      <section className="py-16 border-b border-border">
-        <div className="container mx-auto px-4">
-          <p className="text-center text-muted-foreground mb-8">Trusted by leading organizations</p>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-60">
-            <div className="text-center font-semibold text-lg">World Bank</div>
-            <div className="text-center font-semibold text-lg">Transparency Int'l</div>
-            <div className="text-center font-semibold text-lg">USAID</div>
-            <div className="text-center font-semibold text-lg">Open Gov Partnership</div>
-            <div className="text-center font-semibold text-lg">African Union</div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-2">95%</div>
-              <div className="text-muted-foreground">Faster Analysis</div>
-              <div className="text-sm text-muted-foreground mt-1">vs manual review</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-2">$2.3M</div>
-              <div className="text-muted-foreground">Fraud Detected</div>
-              <div className="text-sm text-muted-foreground mt-1">in first year</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-2">50+</div>
-              <div className="text-muted-foreground">Counties</div>
-              <div className="text-sm text-muted-foreground mt-1">across Kenya</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-2">99.7%</div>
-              <div className="text-muted-foreground">Accuracy</div>
-              <div className="text-sm text-muted-foreground mt-1">in data extraction</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section id="features" className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Flagship Features</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Powerful AI-driven tools for comprehensive budget analysis and transparency monitoring.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-2 hover:border-accent/50 transition-colors">
-              <CardHeader>
-                <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                  <FileText className="h-6 w-6 text-accent" />
-                </div>
-                <CardTitle>AI Document Processing</CardTitle>
-                <CardDescription>Advanced OCR and NLP for extracting insights from budget PDFs</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Multi-language support
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Automated data extraction
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Smart categorization
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:border-accent/50 transition-colors">
-              <CardHeader>
-                <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                  <TrendingUp className="h-6 w-6 text-accent" />
-                </div>
-                <CardTitle>Transparency Scoring</CardTitle>
-                <CardDescription>Real-time transparency metrics and compliance monitoring</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Automated scoring algorithms
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Trend analysis
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Comparative benchmarking
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:border-accent/50 transition-colors">
-              <CardHeader>
-                <div className="h-12 w-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                  <Eye className="h-6 w-6 text-accent" />
-                </div>
-                <CardTitle>Real-time Monitoring</CardTitle>
-                <CardDescription>Continuous monitoring and alert system for budget changes</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Instant notifications
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Anomaly detection
-                  </li>
-                  <li className="flex items-center text-sm">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Custom alerts
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Simple, Transparent Pricing</h2>
-            <p className="text-xl text-muted-foreground">Choose the plan that fits your organization's needs</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card>
-              <CardHeader>
-                <CardTitle>Starter</CardTitle>
-                <CardDescription>Perfect for small organizations</CardDescription>
-                <div className="text-3xl font-bold">
-                  $99<span className="text-lg font-normal text-muted-foreground">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Up to 50 documents/month
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Basic transparency scoring
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Email support
-                  </li>
-                </ul>
-                <Button className="w-full" asChild>
-                  <Link href="/subscribe">Get Started</Link>
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-5xl mx-auto mb-20">
+            <div
+              className={`transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+            >
+              <Badge variant="outline" className="mb-8 px-5 py-2 border-blue-500/30 text-blue-400 bg-blue-500/5 backdrop-blur-sm text-sm font-semibold">
+                <Globe className="h-4 w-4 mr-2" />
+                Empowering 47 Counties for Fiscal Accountability
+              </Badge>
+              <h1 className="text-6xl md:text-8xl font-extrabold mb-10 tracking-tighter leading-[1.05]">
+                The Pulse of the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-emerald-400 animate-gradient">Nation</span>
+              </h1>
+              <p className="text-2xl md:text-3xl text-slate-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                Using AI to transform chaotic PDF reports into a <span className="text-white font-semibold">real-time map</span> of Kenya's public spending.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-24">
+                <Button size="xl" className="h-16 px-12 text-xl bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white group shadow-2xl shadow-blue-900/40 hover:shadow-blue-900/60 transition-all duration-300 border-0" asChild>
+                  <Link href="/subscribe">
+                    Explore the Platform
+                    <ArrowRight className="ml-3 h-6 w-6 transition-transform group-hover:translate-x-2" />
+                  </Link>
                 </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-accent relative">
-              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                <Badge className="bg-accent text-accent-foreground">Most Popular</Badge>
+                <Button variant="outline" size="xl" className="h-16 px-12 text-xl border-slate-600 bg-slate-900/70 hover:bg-slate-800/90 text-white backdrop-blur-md hover:border-slate-500 transition-all duration-300">
+                  Watch the Impact
+                </Button>
               </div>
-              <CardHeader>
-                <CardTitle>Professional</CardTitle>
-                <CardDescription>For government agencies</CardDescription>
-                <div className="text-3xl font-bold">
-                  $299<span className="text-lg font-normal text-muted-foreground">/month</span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Up to 500 documents/month
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Advanced AI analysis
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Real-time monitoring
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Priority support
-                  </li>
-                </ul>
-                <Button className="w-full" asChild>
-                  <Link href="/subscribe">Get Started</Link>
-                </Button>
-              </CardContent>
-            </Card>
+            </div>
+          </div>
 
-            <Card>
-              <CardHeader>
-                <CardTitle>Enterprise</CardTitle>
-                <CardDescription>For large organizations</CardDescription>
-                <div className="text-3xl font-bold">Custom</div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 mb-6">
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Unlimited documents
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Custom integrations
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    Dedicated support
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-4 w-4 text-accent mr-2" />
-                    On-premise deployment
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full bg-transparent">
-                  Contact Sales
-                </Button>
-              </CardContent>
-            </Card>
+          {/* Interactive Map Section */}
+          <div className={`transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
+            <KenyaMap />
           </div>
         </div>
+
+        {/* Live Ticker */}
+        <div className="mt-20">
+          <LiveTicker />
+        </div>
+      </section>
+
+      {/* Insight Carousel Section */}
+      <section id="impact" className="py-32 relative">
+        <div className="absolute top-1/2 left-0 w-full h-[500px] bg-blue-600/5 -skew-y-3 -z-10" />
+        <InsightCarousel />
+      </section>
+
+      {/* County Spotlight Section */}
+      <section id="data" className="py-24 bg-slate-950/20">
+        <CountySpotlight />
+      </section>
+
+      {/* Why It Matters / Trade-off Section */}
+      <section id="why" className="py-24 border-t border-slate-900">
+        <WhyItMatters />
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-accent/5">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Ready to transform budget transparency?</h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join leading organizations using AI to ensure accountable governance and fiscal transparency.
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-blue-600 -z-20" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500 to-blue-700 -z-10" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 -z-5" />
+
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl md:text-6xl font-black mb-8 text-white tracking-tight">
+            Ready to track the <br className="hidden md:block" /> transparency revolution?
+          </h2>
+          <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+            Join the movement towards data-driven governance. Get instant access to county budget insights today.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8" asChild>
-              <Link href="/subscribe">
-                Start Free Trial
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button size="xl" className="h-16 px-12 text-xl bg-white text-blue-700 hover:bg-blue-50 white-glow" asChild>
+              <Link href="/subscribe">Start Free Trial</Link>
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent" asChild>
-              <Link href="/pricing">View Pricing</Link>
+            <Button variant="outline" size="xl" className="h-16 px-12 text-xl border-white/30 text-white hover:bg-white/10 backdrop-blur-md">
+              Contact Sales
             </Button>
           </div>
         </div>
+
+        <style jsx>{`
+          .white-glow {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+          }
+          .white-glow:hover {
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
+          }
+        `}</style>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-border py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <BarChart3 className="h-6 w-6 text-accent" />
+      <footer className="bg-slate-950 border-t border-slate-900 py-20 px-6">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-16">
+            <div className="space-y-6">
+              <div className="flex items-center space-x-3">
+                <div className="bg-blue-600 p-1.5 rounded-md">
+                  <BarChart3 className="h-5 w-5 text-white" />
+                </div>
                 <span className="text-lg font-bold">BudgetAI</span>
               </div>
-              <p className="text-muted-foreground text-sm">
-                AI-powered budget transparency platform for accountable governance.
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Kenya's most advanced fiscal transparency engine. Turning government data into public power since 2024.
               </p>
             </div>
+
             <div>
-              <h4 className="font-semibold mb-4">Product</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="#" className="hover:text-foreground">
-                    Features
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground">
-                    API
-                  </Link>
-                </li>
+              <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Platform</h4>
+              <ul className="space-y-4 text-sm font-medium text-slate-500">
+                <li><Link href="#" className="hover:text-blue-400 transition-colors">Real-time Map</Link></li>
+                <li><Link href="#" className="hover:text-blue-400 transition-colors">County Reports</Link></li>
+                <li><Link href="#" className="hover:text-blue-400 transition-colors">AI Analysis</Link></li>
               </ul>
             </div>
+
             <div>
-              <h4 className="font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="#" className="hover:text-foreground">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground">
-                    Careers
-                  </Link>
-                </li>
+              <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Resources</h4>
+              <ul className="space-y-4 text-sm font-medium text-slate-500">
+                <li><Link href="#" className="hover:text-blue-400 transition-colors">Documentation</Link></li>
+                <li><Link href="#" className="hover:text-blue-400 transition-colors">Open Data Portal</Link></li>
+                <li><Link href="#" className="hover:text-blue-400 transition-colors">API Status</Link></li>
               </ul>
             </div>
+
             <div>
-              <h4 className="font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link href="#" className="hover:text-foreground">
-                    Help Center
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground">
-                    Privacy
-                  </Link>
-                </li>
+              <h4 className="font-bold text-white mb-6 uppercase tracking-widest text-xs">Connect</h4>
+              <ul className="space-y-4 text-sm font-medium text-slate-500">
+                <li><Link href="#" className="hover:text-blue-400 transition-colors">Twitter / X</Link></li>
+                <li><Link href="#" className="hover:text-blue-400 transition-colors">LinkedIn</Link></li>
+                <li><Link href="#" className="hover:text-blue-400 transition-colors">Contact Support</Link></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-            © 2025 BudgetAI. All rights reserved.
+          <div className="border-t border-slate-900 mt-20 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-slate-600 font-medium uppercase tracking-widest gap-6">
+            <p>© 2025 BudgetAI 2.0. Built for the citizens of Kenya.</p>
+            <div className="flex gap-8">
+              <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+            </div>
           </div>
         </div>
       </footer>

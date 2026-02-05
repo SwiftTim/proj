@@ -10,6 +10,7 @@ import { Progress } from "@/components/ui/progress"
 import { Upload, FileText, X } from "lucide-react"
 import { LoadingSpinner } from "@/components/loading-spinner"
 import { useSuccessNotification, useErrorNotification } from "@/components/toast-notifications"
+import { KENYA_COUNTIES, FINANCIAL_YEARS } from "@/lib/constants"
 
 export function UploadModule() {
   const [files, setFiles] = useState<File[]>([])
@@ -22,8 +23,8 @@ export function UploadModule() {
   const showSuccess = useSuccessNotification()
   const showError = useErrorNotification()
 
-  const counties = ["Nairobi", "Mombasa", "Kisumu", "Nakuru"]
-  const years = ["2024", "2023", "2022"]
+  const counties = KENYA_COUNTIES
+  const years = FINANCIAL_YEARS
 
   // Handle drag and drop
   const handleDrop = useCallback((e: React.DragEvent) => {
@@ -56,44 +57,44 @@ export function UploadModule() {
 
   // Upload to API
   const simulateUpload = async () => {
-  if (!county || !year || files.length === 0) {
-    showError("Missing info", "Select county, year, and at least one file")
-    return
-  }
-
-  setUploading(true)
-  setProgress(10)
-  setProcessingStep("Uploading to server...")
-
-  const formData = new FormData()
-  formData.append("county", county)
-  formData.append("year", year)
-  files.forEach((file) => formData.append("files", file))
-
-  try {
-    const res = await fetch("/api/upload", {
-      method: "POST",
-      body: formData,
-    })
-
-    const data = await res.json()
-    if (data.success) {
-      showSuccess("Upload complete", `${files.length} file(s) uploaded successfully`)
-    } else {
-      showError("Server error", data.error || "Failed to upload")
+    if (!county || !year || files.length === 0) {
+      showError("Missing info", "Select county, year, and at least one file")
+      return
     }
-  } catch (err) {
-    console.error("Upload error:", err)
-    showError("Network error", "Could not reach server")
-  }
 
-  setUploading(false)
-  setProgress(0)
-  setProcessingStep("")
-  setFiles([])
-  setCounty("")
-  setYear("")
-}
+    setUploading(true)
+    setProgress(10)
+    setProcessingStep("Uploading to server...")
+
+    const formData = new FormData()
+    formData.append("county", county)
+    formData.append("year", year)
+    files.forEach((file) => formData.append("files", file))
+
+    try {
+      const res = await fetch("/api/upload", {
+        method: "POST",
+        body: formData,
+      })
+
+      const data = await res.json()
+      if (data.success) {
+        showSuccess("Upload complete", `${files.length} file(s) uploaded successfully`)
+      } else {
+        showError("Server error", data.error || "Failed to upload")
+      }
+    } catch (err) {
+      console.error("Upload error:", err)
+      showError("Network error", "Could not reach server")
+    }
+
+    setUploading(false)
+    setProgress(0)
+    setProcessingStep("")
+    setFiles([])
+    setCounty("")
+    setYear("")
+  }
 
 
   return (

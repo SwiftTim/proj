@@ -1,154 +1,47 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { BarChart3, ArrowLeft, Download, FileText, TrendingUp, AlertTriangle, Calendar, Search } from "lucide-react"
+import { ArrowLeft, Download, FileText, Calendar, Search, Loader2, FileCheck } from "lucide-react"
 import { BudgetChart } from "@/components/budget-chart"
 import Link from "next/link"
-
-interface Report {
-  id: string
-  title: string
-  county: string
-  year: string
-  type: "transparency" | "budget" | "comparative"
-  status: "completed" | "processing" | "failed"
-  createdAt: string
-  size: string
-}
+import { generateIntegrityReport } from "@/lib/pdf-generator"
 
 export default function ReportsPage() {
-  const [reports, setReports] = useState<Report[]>([])
-  const [filteredReports, setFilteredReports] = useState<Report[]>([])
+  const [reports, setReports] = useState<any[]>([])
+  const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState("")
-  const [filterType, setFilterType] = useState("all")
-  const [filterStatus, setFilterStatus] = useState("all")
 
   useEffect(() => {
-    // Mock reports data
-    const mockReports: Report[] = [
-      {
-        id: "1",
-        title: "Nairobi County Budget Transparency Report 2024",
-        county: "Nairobi",
-        year: "2024",
-        type: "transparency",
-        status: "completed",
-        createdAt: "2025-01-15",
-        size: "2.4 MB",
-      },
-      {
-        id: "2",
-        title: "Mombasa County Budget Analysis 2024",
-        county: "Mombasa",
-        year: "2024",
-        type: "budget",
-        status: "completed",
-        createdAt: "2025-01-14",
-        size: "1.8 MB",
-      },
-      {
-        id: "3",
-        title: "Comparative Analysis: Top 5 Counties 2024",
-        county: "Multiple",
-        year: "2024",
-        type: "comparative",
-        status: "processing",
-        createdAt: "2025-01-13",
-        size: "3.2 MB",
-      },
-      {
-        id: "4",
-        title: "Kisumu County Transparency Score 2023",
-        county: "Kisumu",
-        year: "2023",
-        type: "transparency",
-        status: "completed",
-        createdAt: "2025-01-12",
-        size: "1.5 MB",
-      },
-    ]
-
-    setReports(mockReports)
-    setFilteredReports(mockReports)
+    const fetchReports = async () => {
+      try {
+        const res = await fetch("/api/reports")
+        const data = await res.json()
+        if (data.success) {
+          setReports(data.reports)
+        }
+      } catch (err) {
+        console.error("Failed to fetch reports:", err)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchReports()
   }, [])
 
-  useEffect(() => {
-    let filtered = reports
-
-    // Apply search filter
-    if (searchQuery) {
-      filtered = filtered.filter(
-        (report) =>
-          report.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          report.county.toLowerCase().includes(searchQuery.toLowerCase()),
-      )
-    }
-
-    // Apply type filter
-    if (filterType !== "all") {
-      filtered = filtered.filter((report) => report.type === filterType)
-    }
-
-    // Apply status filter
-    if (filterStatus !== "all") {
-      filtered = filtered.filter((report) => report.status === filterStatus)
-    }
-
-    setFilteredReports(filtered)
-  }, [reports, searchQuery, filterType, filterStatus])
-
-  const getStatusBadge = (status: Report["status"]) => {
-    switch (status) {
-      case "completed":
-        return <Badge className="bg-chart-2/10 text-chart-2 border-chart-2/20">Completed</Badge>
-      case "processing":
-        return <Badge className="bg-chart-3/10 text-chart-3 border-chart-3/20">Processing</Badge>
-      case "failed":
-        return <Badge variant="destructive">Failed</Badge>
-      default:
-        return <Badge variant="secondary">{status}</Badge>
-    }
-  }
-
-  const getTypeIcon = (type: Report["type"]) => {
-    switch (type) {
-      case "transparency":
-        return <AlertTriangle className="h-4 w-4" />
-      case "budget":
-        return <BarChart3 className="h-4 w-4" />
-      case "comparative":
-        return <TrendingUp className="h-4 w-4" />
-      default:
-        return <FileText className="h-4 w-4" />
-    }
-  }
-
-  const generateNewReport = () => {
-    // Mock report generation
-    const newReport: Report = {
-      id: Date.now().toString(),
-      title: "New Budget Analysis Report",
-      county: "Nakuru",
-      year: "2024",
-      type: "budget",
-      status: "processing",
-      createdAt: new Date().toISOString().split("T")[0],
-      size: "0 MB",
-    }
-
-    setReports((prev) => [newReport, ...prev])
-  }
+  const filteredReports = reports.filter(r =>
+    r.county.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    r.year.toLowerCase().includes(searchQuery.toLowerCase())
+  )
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <header className="border-b border-border bg-card">
+      <header className="border-b border-border bg-card sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
@@ -159,166 +52,132 @@ export default function ReportsPage() {
                 </Link>
               </Button>
               <div className="flex items-center space-x-2">
-                <FileText className="h-8 w-8 text-accent" />
-                <span className="text-xl font-bold">Reports</span>
+                <div className="bg-emerald-600 p-1.5 rounded-lg">
+                  <FileCheck className="h-5 w-5 text-white" />
+                </div>
+                <span className="text-xl font-bold">Audit Reports</span>
               </div>
             </div>
-            <Button onClick={generateNewReport}>
-              <FileText className="h-4 w-4 mr-2" />
-              Generate Report
-            </Button>
           </div>
         </div>
       </header>
 
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Reports & Analytics</h1>
-          <p className="text-muted-foreground">Generate and download detailed budget analysis reports</p>
+          <h1 className="text-3xl font-bold mb-2">Audit Registry</h1>
+          <p className="text-muted-foreground">Download finalized AI-audited budget integrity reports.</p>
         </div>
 
         <Tabs defaultValue="reports" className="space-y-6">
-          <TabsList>
-            <TabsTrigger value="reports">My Reports</TabsTrigger>
-            <TabsTrigger value="analytics">Analytics Dashboard</TabsTrigger>
+          <TabsList className="bg-muted/50 p-1">
+            <TabsTrigger value="reports">Verified Reports</TabsTrigger>
+            <TabsTrigger value="analytics">Global Analytics</TabsTrigger>
           </TabsList>
 
           <TabsContent value="reports" className="space-y-6">
             {/* Filters */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Filter Reports</CardTitle>
+            <Card className="border-border/50 shadow-sm">
+              <CardHeader className="pb-4">
+                <CardTitle className="text-sm font-medium">Quick Search</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex flex-col md:flex-row gap-4">
-                  <div className="flex-1">
-                    <div className="relative">
-                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                      <Input
-                        placeholder="Search reports..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="pl-10"
-                      />
-                    </div>
-                  </div>
-                  <Select value={filterType} onValueChange={setFilterType}>
-                    <SelectTrigger className="w-full md:w-48">
-                      <SelectValue placeholder="Report Type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Types</SelectItem>
-                      <SelectItem value="transparency">Transparency</SelectItem>
-                      <SelectItem value="budget">Budget Analysis</SelectItem>
-                      <SelectItem value="comparative">Comparative</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <Select value={filterStatus} onValueChange={setFilterStatus}>
-                    <SelectTrigger className="w-full md:w-48">
-                      <SelectValue placeholder="Status" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Status</SelectItem>
-                      <SelectItem value="completed">Completed</SelectItem>
-                      <SelectItem value="processing">Processing</SelectItem>
-                      <SelectItem value="failed">Failed</SelectItem>
-                    </SelectContent>
-                  </Select>
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    placeholder="Search by county or financial year..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-10 h-11"
+                  />
                 </div>
               </CardContent>
             </Card>
 
             {/* Reports List */}
-            <div className="space-y-4">
-              {filteredReports.map((report) => (
-                <Card key={report.id}>
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4">
-                        <div className="p-2 bg-accent/10 rounded-lg">{getTypeIcon(report.type)}</div>
-                        <div>
-                          <h3 className="font-semibold">{report.title}</h3>
-                          <div className="flex items-center space-x-4 mt-1 text-sm text-muted-foreground">
-                            <span>{report.county}</span>
-                            <span>•</span>
-                            <span>{report.year}</span>
-                            <span>•</span>
-                            <span className="flex items-center">
-                              <Calendar className="h-3 w-3 mr-1" />
-                              {report.createdAt}
-                            </span>
-                            <span>•</span>
-                            <span>{report.size}</span>
-                          </div>
-                        </div>
+            {loading ? (
+              <div className="flex justify-center p-20">
+                <Loader2 className="h-10 w-10 animate-spin text-emerald-600" />
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredReports.map((report) => (
+                  <Card key={report.id} className="relative group hover:shadow-lg transition-all border-emerald-500/10 hover:border-emerald-500/30 overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-emerald-500/0 group-hover:bg-emerald-500 transition-all" />
+                    <CardHeader>
+                      <div className="flex justify-between items-start mb-2">
+                        <Badge variant="outline" className="text-[10px] uppercase font-bold border-emerald-500/30 text-emerald-600 bg-emerald-500/5">
+                          {report.year}
+                        </Badge>
+                        <span className="text-[10px] text-muted-foreground flex items-center">
+                          <Calendar className="h-3 w-3 mr-1" />
+                          {new Date(report.created_at).toLocaleDateString()}
+                        </span>
                       </div>
-                      <div className="flex items-center space-x-3">
-                        {getStatusBadge(report.status)}
-                        {report.status === "completed" && (
-                          <Button variant="outline" size="sm">
-                            <Download className="h-4 w-4 mr-2" />
-                            Download
-                          </Button>
-                        )}
+                      <CardTitle className="text-xl group-hover:text-emerald-400 transition-colors uppercase tracking-tight">{report.county}</CardTitle>
+                      <CardDescription className="line-clamp-3 text-xs leading-relaxed mt-2 h-12">
+                        {report.summary_text || "Automated integrity assessment completed."}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="flex items-center justify-end border-t border-border/50 pt-4 mt-2">
+                        <Button
+                          onClick={() => generateIntegrityReport(report)}
+                          className="bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-900/10 w-full"
+                        >
+                          <Download className="h-4 w-4 mr-2" />
+                          Download Audit Report (PDF)
+                        </Button>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                ))}
 
-              {filteredReports.length === 0 && (
-                <Card>
-                  <CardContent className="p-12 text-center">
-                    <FileText className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                    <h3 className="font-semibold mb-2">No reports found</h3>
-                    <p className="text-muted-foreground mb-4">
-                      {searchQuery || filterType !== "all" || filterStatus !== "all"
-                        ? "Try adjusting your filters"
-                        : "Generate your first report to get started"}
-                    </p>
-                    <Button onClick={generateNewReport}>
-                      <FileText className="h-4 w-4 mr-2" />
-                      Generate Report
-                    </Button>
-                  </CardContent>
-                </Card>
-              )}
-            </div>
+                {filteredReports.length === 0 && (
+                  <Card className="col-span-full border-dashed border-2">
+                    <CardContent className="p-20 text-center">
+                      <FileText className="h-12 w-12 text-muted-foreground mx-auto mb-4 opacity-20" />
+                      <h3 className="font-semibold text-xl mb-2">No Reports Found</h3>
+                      <p className="text-muted-foreground">
+                        Try searching for a different county or upload new documents for analysis.
+                      </p>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
+            )}
           </TabsContent>
 
           <TabsContent value="analytics" className="space-y-6">
             <div className="grid gap-6 md:grid-cols-3">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Total Reports</CardTitle>
+                  <CardTitle className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Reports Generated</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold text-accent">{reports.length}</div>
-                  <p className="text-sm text-muted-foreground">Generated this month</p>
+                  <div className="text-4xl font-black text-emerald-600">{reports.length}</div>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Counties Analyzed</CardTitle>
+                  <CardTitle className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Counties Covered</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold text-accent">{new Set(reports.map((r) => r.county)).size}</div>
-                  <p className="text-sm text-muted-foreground">Unique counties covered</p>
+                  <div className="text-4xl font-black text-emerald-600">{new Set(reports.map((r) => r.county)).size}</div>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">Avg. Transparency Score</CardTitle>
+                  <CardTitle className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Coverage Percent</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl font-bold text-accent">7.2</div>
-                  <p className="text-sm text-muted-foreground">Out of 10</p>
+                  <div className="text-4xl font-black text-emerald-600">
+                    {Math.round((new Set(reports.map((r) => r.county)).size / 47) * 100)}%
+                  </div>
                 </CardContent>
               </Card>
             </div>
-
             <BudgetChart />
           </TabsContent>
         </Tabs>

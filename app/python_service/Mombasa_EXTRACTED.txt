@@ -1,0 +1,420 @@
+
+=== Page 8 ===
+vii
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+3.28. County Government of Mombasa ..................................................................................................................324
+3.29. County Government of Murang’a ...................................................................................................................335
+3.30. Nairobi City County Government ..................................................................................................................345
+3.31. County Government of Nakuru ......................................................................................................................356
+3.32. County Government of Nandi .........................................................................................................................369
+3.33. County Government of Narok ........................................................................................................................379
+3.34. County Government of Nyamira ....................................................................................................................388
+3.35. County Government of Nyandarua ................................................................................................................398
+3.36. County Government of Nyeri ..........................................................................................................................408
+3.37. County Government of Samburu ...................................................................................................................420
+3.38. County Government Siaya ...............................................................................................................................431
+3.39. County Government of Taita Taveta ...............................................................................................................442
+3.40. County Government of Tana River .................................................................................................................451
+3.41. County Government of Tharaka Nithi ...........................................................................................................460
+3.42. County Government of Trans Nzoia ..............................................................................................................471
+3.43. County Government of Turkana .....................................................................................................................481
+3.44. County Government of Uasin Gishu ..............................................................................................................492
+3.45. County Government Vihiga ............................................................................................................................503
+3.46. County Government of Wajir ..........................................................................................................................513
+3.47. County Government of West Pokot ................................................................................................................521
+4. KEY OBSERV ATIONS AND RECOMMENDATIONS ............................................................................533
+4.1.  Introduction ........................................................................................................................................................533
+4.2. Underperformance in Own-Source Revenue Collection ...............................................................................533
+4.3. Revenue Arrears ..................................................................................................................................................533
+4.4. Overreliance on Facility Improvement Fund ..................................................................................................533
+4.5. Definition of County Public Debt .....................................................................................................................533
+4.6. High Levels of Pending Bills ..............................................................................................................................534
+4.7. Low Expenditure on Development Programmes ............................................................................................534
+4.8. High Expenditure on Compensation of Employees   .....................................................................................534
+4.9. High Proportion of Health Sector Wage Bill to Total Wage Bill ...................................................................535
+4.10. Lapsing of Established Fund Regulations ......................................................................................................535
+4.11. Non-Compliance with Legislation on Account Opening by County Governments ................................535
+4.12. Delay in Submission of Financial and Non-Financial Reports to the Controller of Budget ...................536
+5. MONITORING AND EV ALUATION OF COUNTY GOVERNMENTS' BUDGET IMPLEMENTATION 
+FOR FY 2024/25  ............................................................................................................................................537
+5.1. Introduction .........................................................................................................................................................537
+5.2. Objectives of the Monitoring and Evaluation Exercise ..................................................................................537
+5.3. Key Findings ........................................................................................................................................................538
+5.4. Conclusion ...........................................................................................................................................................552
+6. CONCLUSION ..........................................................................................................................................553
+7. Annexes ......................................................................................................................................................554
+=== Page 9 ===
+viii
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+LIST OF TABLES
+Table 2.1: Own Source Revenue Collection in FY 2024/25 ---------------------------------------------------------------2
+Table 2.2: Summary of County Governments’ Revenue Arrears ----------------------------------------------------------4
+Table 2.3: Revenues and Revenue Arrears from SHIF and defunct NHIF------------------------------------------------5
+Table 2.4: Expenditure by Major Economic Classification in FY 2024/25 ------------------------------------------------7
+Table 2.5: County Budget Allocation, Expenditure, and Absorption Rate for FY 2024/25 ------------------------------8
+Table 2.6: Sub-Programmes with a reported overabsorption in FY 2024/25 ------------------------------------------- 10
+Table 2.7: Sub-Programmes with reported absorption of less than 5 per cent in FY 2024/25 ------------------------- 11
+Table 2.8: MCA ’s Budget Allocation, Expenditure and Absorption Rate in FY 2024/25 ------------------------------- 13
+Table 2.9: Pending Bills for the Counties as of 30th June 2025 ---------------------------------------------------------- 15
+Table 2.10: County Governments Pending Bills Ageing Analysis as of 30th June 2025 ------------------------------- 16
+Table 2.11: Summary of the Number of Commercial Bank Accounts Operated by County Governments ---------- 18
+Table 2.12: County Established Funds that have Lapsed or are nearing Lapsing--------------------------------------- 19
+Table 3.1: Baringo County, Revenue Performance in FY 2024/25 ------------------------------------------------------ 21
+Table 3.2: Baringo County Revenue Arrears as of 30 June 2025 -------------------------------------------------------- 23
+Table 3.3: Baringo County Pending Bills as of 30 June 2025 ------------------------------------------------------------ 24
+Table 3.4: Baringo County Pending Bill Ageing Analysis as of 30 June 2025 ------------------------------------------- 25
+Table 3.5: Baringo County Summary of Budget and Expenditure by Economic Classification ----------------------- 25
+Table 3.6: Performance of Baringo County Established Funds in FY 2024/25 ----------------------------------------- 26
+Table 3.7: Summary of Expenditure on Foreign Travel in FY 2024/25 ------------------------------------------------- 28
+Table 3.8: Baringo County Health Facilities FIF Performance in FY2024/25 ------------------------------------------ 28
+Table 3.9: Baringo County Health Facilities Expenditure Performance in FY 2024/25 -------------------------------- 29
+Table 3.10: Baringo County, List of Development Projects with the Highest Expenditure ---------------------------- 29
+Table 3.11: Baringo County List of Stalled Projects as of 30th June 2025 ---------------------------------------------- 30
+Table 3.12: Baringo County, Budget Allocation and Absorption Rate by Department -------------------------------- 31
+Table 3.13: Bomet County, Revenue Performance in FY 2024/25 ------------------------------------------------------ 32
+Table 3.14: Bomet County Revenue Arrears as of 30 June 2025 -------------------------------------------------------- 34
+Table 3.15: Bomet County Pending Bills as of 30 June 2025 ------------------------------------------------------------ 35
+Table 3.16: County Bomet Pending Bill Ageing Analysis as of 30 June 2025 ------------------------------------------- 36
+Table 3.17: Bomet County Summary of Budget and Expenditure by Economic Classification ----------------------- 36
+=== Page 10 ===
+ix
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+Table 3.18: Breakdown of Bomet County Manual Payroll --------------------------------------------------------------- 37
+Table 3.19: Performance of Bomet County Established Funds in FY 2024/25 ----------------------------------------- 37
+Table 3.20: Performance of Bomet County Corporations in FY 2024/25----------------------------------------------- 38
+Table 3.21: Summary of Expenditure on Foreign Travel in FY 2024/25 ------------------------------------------------ 38
+Table 3.22: Bomet County Health Facilities FIF Performance in FY2024/25 ------------------------------------------ 39
+Table 3.23: Bomet County Health Facilities Expenditure Performance in FY 2024/25 -------------------------------- 40
+Table 3.24: Bomet County, List of Development Projects with the Highest Expenditure ----------------------------- 40
+Table 3.25: Bomet County, Budget Allocation and Absorption Rate by Department ---------------------------------- 41
+Table 3.26: Bungoma County, Revenue Performance in the FY 2024/25 ----------------------------------------------- 42
+Table 3.27: Bungoma County Revenue Arrears as of 30 June 2025 ----------------------------------------------------- 45
+Table 3.28: Bungoma County Pending Bills as of 30 June 2025 --------------------------------------------------------- 46
+Table 3.29: Bungoma County Pending Bill Ageing Analysis as of 30 June 2025 --------------------------------------- 46
+Table 3.30: Summary of Budget and Expenditure by Economic Classification ---------------------------------------- 46
+Table 3.31: Breakdown of Bungoma County Manual Payroll ----------------------------------------------------------- 47
+Table 3.32: Performance of County Established Funds in the FY 2024/25 --------------------------------------------- 48
+Table 3.33: Performance of Bungoma County Corporations in FY 2024/25 ------------------------------------------- 48
+Table 3.34: Summary of Highest Expenditure on Foreign Travel as of 30 June 2025 ---------------------------------- 49
+Table 3.35: Bungoma County Health Facilities FIF Performance in FY2024/25 --------------------------------------- 50
+Table 3.36: Bungoma County Health Facilities Expenditure Performance in FY 2024/25 ---------------------------- 50
+Table 3.37: Bungoma County, List of Development Projects with the Highest Expenditure -------------------------- 50
+Table 3.38: Bungoma County, Budget Allocation and Absorption Rate by Department ------------------------------ 51
+Table 3.39: Busia County, Revenue Performance in FY 2024/25 -------------------------------------------------------- 53
+Table 3.40: Busia County Pending Bills as of 30 June 2025 -------------------------------------------------------------- 55
+Table 3.41: County of Busia Pending Bill Ageing Analysis as of 30 June 2025 ----------------------------------------- 56
+Table 3.42: Busia County Summary of Budget and Expenditure by Economic Classification ------------------------ 56
+Table 3.43: Breakdown of Busia County Manual Payroll ---------------------------------------------------------------- 57
+Table 3.44: Performance of Busia County Established Funds in FY 2024/25 ------------------------------------------- 58
+Table 3.45: Performance of Busia County Corporations in FY 2024/25 ------------------------------------------------ 58
+Table 3.46: Summary of Expenditure on Foreign Travel in FY 2024/25 ------------------------------------------------ 59
+Table 3.47: Busia County Health Facilities FIF Performance in FY2024/25 -------------------------------------------- 60
+=== Page 11 ===
+x
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+Table 3.48: Busia County Health Facilities Expenditure Performance in FY 2024/25 --------------------------------- 60
+Table 3.49: Busia County, List of Development Projects with the Highest Expenditure ------------------------------- 61
+Table 3.50: Busia County, Budget Allocation and Absorption Rate by Department. ---------------------------------- 61
+Table 3.51: Elgeyo Marakwet County, Revenue Performance in FY 2024/25 ------------------------------------------ 64
+Table 3.52: Elgeyo Marakwet County Revenue Arrears as of 30 June 2025 -------------------------------------------- 66
+Table 3.53: Elgeyo Marakwet County Pending Bills as of 30 June 2025 ------------------------------------------------ 66
+Table 3.54: Elgeyo Marakwet County Pending Bill Ageing Analysis as of 30 June 2025 ------------------------------- 67
+Table 3.55: Elgeyo Marakwet County Summary of Budget and Expenditure by Economic Classification ----------- 67
+Table 3.56: Performance of Elgeyo Marakwet County Established Funds in FY 2024/25 ----------------------------- 68
+Table 3.57: Summary of Expenditure on Foreign Travel in FY 2024/25 ------------------------------------------------ 70
+Table 3.58: Elgeyo Marakwet County Health Facilities FIF Performance in FY2024/25 ------------------------------ 70
+Table 3.59: Elgeyo Marakwet County Health Facilities Expenditure Performance in FY 2024/25 -------------------- 71
+Table 3.60: Elgeyo Marakwet County, List of Development Projects with the Highest Expenditure ----------------- 71
+Table 3.61: Elgeyo Marakwet County Stalled Projects as of 30 June 2025 ---------------------------------------------- 72
+Table 3.62: Elgeyo Marakwet County, Budget Allocation and Absorption Rate by Department. --------------------- 72
+Table 3.63: Embu County, Revenue Performance in FY 2024/25 ------------------------------------------------------- 74
+Table 3.64: Embu County Pending Bills as of 30 June 2025 ------------------------------------------------------------- 77
+Table 3.65: Embu County Pending Bill Ageing Analysis as of 30 June 2025 ------------------------------------------- 77
+Table 3.66: Embu County Summary of Budget and Expenditure by Economic Classification ------------------------ 78
+Table 3.67: Breakdown of Embu County Manual Payroll --------------------------------------------------------------- 79
+Table 3.68: Performance of Embu County Established Funds in FY 2024/25 ------------------------------------------ 79
+Table 3.69: Summary of Expenditure on Foreign Travel in FY 2024/25 ------------------------------------------------ 80
+Table 3.70: Embu County Health Facilities FIF Performance in FY2024/25 ------------------------------------------- 81
+Table 3.71: Embu County Health Facilities Expenditure Performance in FY 2024/25--------------------------------- 81
+Table 3.72: Embu County, List of Development Projects with the Highest Expenditure ------------------------------ 82
+Table 3.73: Embu County, Budget Allocation and Absorption Rate by Department ---------------------------------- 83
+Table 3.74: Garissa County, Revenue Performance in FY 2024/25 ------------------------------------------------------ 85
+Table 3.75: Garissa County Revenue Arrears as of 30 June 2025 -------------------------------------------------------- 87
+Table 3.76: Garissa County Pending Bills as of 30 June 2025 ------------------------------------------------------------ 88
+Table 3.77: Garissa County Pending Bill Ageing Analysis as of 30 June 2025 ------------------------------------------ 88
+=== Page 12 ===
+xi
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+Table 3.78: Garissa County Summary of Budget and Expenditure by Economic Classification ---------------------- 89
+Table 3.79: Breakdown of Garissa County Manual Payroll -------------------------------------------------------------- 90
+Table 3.80: Performance of Garissa County Established Funds in FY 2024/25 ---------------------------------------- 91
+Table 3.81: Performance of Garissa County Corporations in FY 2024/25 ---------------------------------------------- 91
+Table 3.82: Summary of Expenditure on Foreign Travel in FY 2024/25 ------------------------------------------------ 92
+Table 3.83: Garissa County Health Facilities FIF Performance in FY2024/25 ------------------------------------------ 93
+Table 3.84: Garissa County Health Facilities Expenditure Performance in FY 2024/25 ------------------------------- 93
+Table 3.85: Garissa County, List of Development Projects with the Highest Expenditure----------------------------- 93
+Table 3.86: County Stalled Projects as of 30 June 2025 ------------------------------------------------------------------ 94
+Table 3.87: Garissa County, Budget Allocation and Absorption Rate by Department --------------------------------- 95
+Table 3.88: Homa Bay County, Revenue Performance in FY 2024/25 -------------------------------------------------- 97
+Table 3.89: Homa Bay County Revenue Arrears as of 30 June 2025 ---------------------------------------------------- 99
+Table 3.90: Homa Bay County Pending Bills as of 30 June 2025 -------------------------------------------------------- 99
+Table 3.91: Homa Bay County Pending Bill Ageing Analysis as of 30 June 2025 ------------------------------------- 100
+Table 3.92: Homa Bay County Summary of Budget and Expenditure by Economic Classification ------------------ 100
+Table 3.93: Breakdown of Homa Bay County Manual Payroll --------------------------------------------------------- 101
+Table 3.94: Performance of Homa Bay County Established Funds in FY 2024/25 ------------------------------------ 102
+Table 3.95: Homa Bay County Health Facilities FIF Performance in FY 2024/25 ------------------------------------ 103
+Table 3.96: Homa Bay County Health Facilities Expenditure Performance in FY 2024/25 -------------------------- 104
+Table 3.97: Homa Bay County, List of Development Projects with the Highest Expenditure ------------------------ 104
+Table 3.98: Homa Bay County, Budget Allocation and Absorption Rate by Department ---------------------------- 105
+Table 3.99: Isiolo County, Revenue Performance in FY 2024/25 ------------------------------------------------------- 108
+Table 3.100: Isiolo County Pending Bills as of 30 June 2025 ----------------------------------------------------------- 110
+Table 3.101: County Isiolo Pending Bill Ageing Analysis as of 30 June 2025 ------------------------------------------ 111
+Table 3.102: Isiolo County Summary of Budget and Expenditure by Economic Classification ---------------------- 111
+Table 3.103:  Breakdown of Isiolo County Manual Payroll ------------------------------------------------------------- 112
+Table 3.104: Performance of Isiolo County Established Funds in FY 2024/25 ---------------------------------------- 113
+Table 3.105: Performance of Isiolo County Corporations in FY 2024/25 --------------------------------------------- 113
+Table 3.106: Breakdown of “Other Operating Expenses” costs in the above graph. ---------------------------------- 114
+Table 3.107: Isiolo County Health Facilities FIF Performance in FY2024/25 ----------------------------------------- 115
+=== Page 13 ===
+xii
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+Table 3.108: Isiolo County Health Facilities Expenditure Performance in FY 2024/25 ------------------------------- 115
+Table 3.109: Isiolo County, List of Development Projects with the Highest Expenditure ---------------------------- 115
+Table 3.110: Isiolo County Stalled Projects as of 30 June 2025 --------------------------------------------------------- 116
+Table 3.111: Isiolo County, Budget Allocation and Absorption Rate by Department -------------------------------- 117
+Table 3.112: Kajiado County, Revenue Performance in FY 2024/25 --------------------------------------------------- 118
+Table 3.113: Kajiado County Revenue Arrears as of 30 June 2025 ----------------------------------------------------- 121
+Table 3.114: Kajiado County Pending Bills as of 30 June 2025 --------------------------------------------------------- 122
+Table 3.115: County Kajiado Pending Bill Ageing Analysis as of 30 June 2025 --------------------------------------- 122
+Table 3.116: Kajiado County Summary of Budget and Expenditure by Economic Classification -------------------- 122
+Table 3.117: Breakdown of Kajiado County Manual Payroll ----------------------------------------------------------- 123
+Table 3.118: Performance of Kajiado County Established Funds in FY 2024/25 -------------------------------------- 124
+Table 3.119: Performance of Kajiado County Corporations in FY 2024/25 ------------------------------------------- 124
+Table 3.120: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 126
+Table 3.121:  Kajiado County Health Facilities FIF Performance in FY2024/25 -------------------------------------- 126
+Table 3.122: Kajiado County Health Facilities Expenditure Performance in FY 2024/25 ---------------------------- 127
+Table 3.123: Kajiado County, List of Development Projects with the Highest Expenditure -------------------------- 127
+Table 3.124: Kajiado County, Budget Allocation and Absorption Rate by Department ------------------------------ 128
+Table 3.125: Kakamega County, Revenue Performance in FY 2024/25 ------------------------------------------------ 130
+Table 3.126: Kakamega County Revenue Arrears as of 30 June 2025 -------------------------------------------------- 133
+Table 3.127: Kakamega County Pending Bills as of 30 June 2025 ------------------------------------------------------ 133
+Table 3.128: Kakamega County Summary of Budget and Expenditure by Economic Classification ----------------- 134
+Table 3.129: Breakdown of Kakamega County Assembly Manual Payroll--------------------------------------------- 135
+Table 3.130: Performance of Kakamega County Established Funds in FY 2024/25 ----------------------------------- 136
+Table 3.131: Performance of Kakamega County Corporations in FY 2024/25 ---------------------------------------- 137
+Table 3.132: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 138
+Table 3.133: Kakamega County Health Facilities FIF Performance in FY2024/25 ------------------------------------ 138
+Table 3.134: Kakamega County, List of Development Projects with the Highest Expenditure ----------------------- 139
+Table 3.135: Kakamega County, Budget Allocation and Absorption Rate by Department --------------------------- 140
+Table 3.136: Kericho County, Revenue Performance in FY 2024/25 --------------------------------------------------- 142
+Table 3.137: Kericho County Pending Bills as of 30 June 2025 --------------------------------------------------------- 144
+=== Page 14 ===
+xiii
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+Table 3.138: Kericho County Pending Bill Ageing Analysis as of 30th June 2025------------------------------------- 144
+Table 3.139: Kericho County Summary of Budget and Expenditure by Economic Classification ------------------- 145
+Table 3.140: Breakdown of Kericho County Manual Payroll ----------------------------------------------------------- 145
+Table 3.141: Performance of Kericho County Established Funds in FY 2024/25 ------------------------------------- 146
+Table 3.142: Performance of Kericho County Corporations in FY 2024/25 ------------------------------------------- 146
+Table 3.143: Kericho County Health Facilities FIF Performance in FY2024/25 --------------------------------------- 147
+Table 3.144: Kericho County Health Facilities Expenditure Performance in FY 2024/25 ---------------------------- 148
+Table 3.145: Kericho County, List of Development Projects with the Highest Expenditure -------------------------- 148
+Table 3.146: Kericho County Stalled Projects as of 30 June 2025 ------------------------------------------------------ 149
+Table 3.147:  Kericho County, Budget Allocation and Absorption Rate by Department ----------------------------- 150
+Table 3.148: Kiambu County, Revenue Performance in FY 2024/25--------------------------------------------------- 152
+Table 3.149: Kiambu County Revenue Arrears as of 30 June 2025 ----------------------------------------------------- 154
+Table 3.150: Kiambu County Pending Bills as of 30 June 2025--------------------------------------------------------- 155
+Table 3.151:  Kiambu County Pending Bill Ageing Analysis as of 30 June 2025 -------------------------------------- 156
+Table 3.152: Kiambu County Summary of Budget and Expenditure by Economic Classification ------------------- 156
+Table 3.153: Breakdown of Kiambu County Manual Payroll ----------------------------------------------------------- 157
+Table 3.154: Performance of Kiambu County Established Funds in FY 2024/25 ------------------------------------- 158
+Table 3.155: Performance of Kiambu County Corporations in FY 2024/25 ------------------------------------------- 158
+Table 3.156:  Summary of Expenditure on Foreign Travel in FY 2024/25 --------------------------------------------- 159
+Table 3.157: Kiambu County Health Facilities FIF Performance in FY2024/25--------------------------------------- 160
+Table 3.158: Kiambu County Health Facilities Expenditure Performance in FY 2024/25 ---------------------------- 161
+Table 3.159: Kiambu County, List of Development Projects with the Highest Expenditure ------------------------- 162
+Table 3.160: Kiambu County Stalled Projects as of 30 June 2025 ------------------------------------------------------ 163
+Table 3.161: Kiambu County, Budget Allocation and Absorption Rate by Department ------------------------------ 163
+Table 3.162: Kilifi County, Revenue Performance in FY 2024/25 ------------------------------------------------------ 165
+Table 3.163: Kilifi County Pending Bills as of 30 June 2025 ------------------------------------------------------------ 167
+Table 3.164: Kilifi County Pending Bill Ageing Analysis as of 30th June 2025 ---------------------------------------- 167
+Table 3.165: Kilifi County Summary of Budget and Expenditure by Economic Classification ----------------------- 168
+Table 3.166: Breakdown of Kilifi County Manual Payroll -------------------------------------------------------------- 169
+Table 3.167: Performance of Kilifi County Established Funds in FY 2024/25 ----------------------------------------- 170
+=== Page 15 ===
+xiv
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+Table 3.168: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 171
+Table 3.169: Kilifi County Health Facilities FIF Performance in FY2024/25 ------------------------------------------ 171
+Table 3.170: Kilifi County, List of Development Projects with the Highest Expenditure ----------------------------- 172
+Table 3.171: Kilifi County, Budget Allocation and Absorption Rate by Department --------------------------------- 172
+Table 3.172: Kirinyaga County, Revenue Performance in FY 2024/25 ------------------------------------------------- 174
+Table 3.173: Kirinyaga County Pending Bills as of 30 June 2025 ------------------------------------------------------- 177
+Table 3.174:  County Kirinyaga Pending Bill Ageing Analysis as of 30th June 2025 ---------------------------------- 177
+Table 3.175: Kirinyaga County Summary of Budget and Expenditure by Economic Classification ----------------- 177
+Table 3.176: Breakdown of Kirinyaga County Manual Payroll --------------------------------------------------------- 178
+Table 3.177: Performance of Kirinyaga County Established Funds in FY 2024/25 ----------------------------------- 179
+Table 3.178: Kirinyaga County Health Facilities FIF Performance in FY2024/25 ------------------------------------- 180
+Table 3.179: Kirinyaga County Health Facilities Expenditure Performance in FY 2024/25 -------------------------- 180
+Table 3.180: Kirinyaga County, List of Development Projects with the Highest Expenditure------------------------ 180
+Table 3.181: Kirinyaga County, Budget Allocation and Absorption Rate by Department ---------------------------- 181
+Table 3.182: Kisii County, Revenue Performance in FY 2024/25 ------------------------------------------------------ 183
+Table 3.183:  Kisii County Revenue Arrears as of 30 June 2025 -------------------------------------------------------- 185
+Table 3.184: Kisii County Pending Bills as of 30 June 2025 ------------------------------------------------------------ 186
+Table 3.185: County Government of Kisii Pending Bill Ageing Analysis as of 30 June 2025 ------------------------- 186
+Table 3.186:  Kisii County Summary of Budget and Expenditure by Economic Classification ---------------------- 187
+Table 3.187: Breakdown of Kisii County Manual Payroll --------------------------------------------------------------- 188
+Table 3.188:  Performance of Kisii County Established Funds in FY 2024/25 ----------------------------------------- 188
+Table 3.189: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 189
+Table 3.190: Kisii County Health Facilities FIF Performance in FY2024/25 ------------------------------------------ 191
+Table 3.191: Kisii County Health Facilities Expenditure Performance in FY 2024/25 -------------------------------- 191
+Table 3.192: Kisii County, List of Development Projects with the Highest Expenditure ----------------------------- 191
+Table 3.193: Kisii County, Budget Allocation and Absorption Rate by Department---------------------------------- 192
+Table 3.194: Kisumu County, Revenue Performance in FY 2024/25 --------------------------------------------------- 194
+Table 3.195: Kisumu County Revenue Arrears as of 30 June 2025 ----------------------------------------------------- 196
+Table 3.196: Kisumu County Pending Bills as of 30 June 2025 --------------------------------------------------------- 197
+Table 3.197: Kisumu County Pending Bill Ageing Analysis as of 30 June 2025 --------------------------------------- 198
+=== Page 16 ===
+xv
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+Table 3.198: Kisumu County Summary of Budget and Expenditure by Economic Classification ------------------- 198
+Table 3.199: Breakdown of Kisumu County Manual Payroll ----------------------------------------------------------- 199
+Table 3.200: Performance of Kisumu County Established Funds in FY 2024/25 ------------------------------------- 200
+Table 3.201: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 201
+Table 3.202: Kisumu County Health Facilities FIF Performance in FY2024/25 --------------------------------------- 203
+Table 3.203: Kisumu County Health Facilities Expenditure Performance in FY 2024/25 ---------------------------- 203
+Table 3.204: Kisumu County, List of Development Projects with the Highest Expenditure -------------------------- 204
+Table 3.205: Kisumu County, Budget Allocation and Absorption Rate by Department ------------------------------ 205
+Table 3.206: Kitui County, Revenue Performance in FY 2024/25 ------------------------------------------------------ 207
+Table 3.207: Kitui County Revenue Arrears as of 30 June 2025 -------------------------------------------------------- 208
+Table 3.208: Kitui County Pending Bills as of 30 June 2025 ------------------------------------------------------------ 209
+Table 3.209: Kitui County Pending Bill Ageing Analysis as of 30 June 2025 ------------------------------------------ 209
+Table 3.210: Kitui County Summary of Budget and Expenditure by Economic Classification ----------------------- 210
+Table 3.211: Breakdown of Kitui County (Assembly) Manual Payroll ------------------------------------------------- 211
+Table 3.212: Performance of Kitui County Established Funds in FY 2024/25 ----------------------------------------- 212
+Table 3.213: Performance of Kitui County Corporations in FY 2024/25 ---------------------------------------------- 212
+Table 3.214: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 213
+Table 3.215: Kitui County Health Facilities FIF Performance in FY2024/25 ------------------------------------------ 214
+Table 3.216: Kitui County Health Facilities Expenditure Performance in FY 2024/25 ------------------------------- 215
+Table 3.217: Kitui County, List of Development Projects with the Highest Expenditure ----------------------------- 215
+Table 3.218: Kitui County, List of Stalled Projects as of 30 June 2025 ------------------------------------------------- 216
+Table 3.219: Kitui County, Budget Allocation and Absorption Rate by Department --------------------------------- 218
+Table 3.220: Kwale County, Revenue Performance in FY 2024/25 ----------------------------------------------------- 220
+Table 3.221: Kwale County Revenue Arrears as of 30 June 2025 ------------------------------------------------------- 222
+Table 3.222: Kwale County Pending Bills as of 30 June 2025 ----------------------------------------------------------- 223
+Table 3.223: Kwale County Pending Bill Ageing Analysis as of 30 June 2025 ----------------------------------------- 223
+Table 3.224: Kwale County Summary of Budget and Expenditure by Economic Classification---------------------- 223
+Table 3.225: Breakdown of Kwale County Manual Payroll ------------------------------------------------------------- 224
+Table 3.226: Performance of Kwale County Established Funds in FY 2024/25 ---------------------------------------- 225
+Table 3.227: Performance of Kwale County Corporations in FY 2024/25 --------------------------------------------- 225
+=== Page 17 ===
+xvi
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+Table 3.228: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 226
+Table 3.229: Kwale County Health Facilities FIF Performance in FY2024/25 ----------------------------------------- 227
+Table 3.230: Kwale County Health Facilities Expenditure Performance in FY 2024/25 ------------------------------ 227
+Table 3.231: Kwale County, List of Development Projects with the Highest Expenditure ---------------------------- 227
+Table 3.232: Kwale County Stalled Projects as of 30 June 2025 -------------------------------------------------------- 228
+Table 3.233: Kwale County, Budget Allocation and Absorption Rate by Department -------------------------------- 229
+Table 3.234: Laikipia County, Revenue Performance in FY 2024/25 -------------------------------------------------- 231
+Table 3.235: Laikipia County Revenue Arrears as of 30 June 2025 ---------------------------------------------------- 233
+Table 3.236: Pending Bills in Laikipia County as of 30 June 2025------------------------------------------------------ 233
+Table 3.237: County of Laikipia Pending Bill Ageing Analysis as of 30th June 2025 --------------------------------- 234
+Table 3.238:  Laikipia County Summary of Budget and Expenditure by Economic Classification ------------------- 234
+Table 3.239: Breakdown of Laikipia County Manual Payroll ----------------------------------------------------------- 235
+Table 3.240: Performance of Laikipia County Established Funds in FY 2024/25 ------------------------------------- 236
+Table 3.241: Performance of Laikipia County Corporations in FY 2024/25 ------------------------------------------- 236
+Table 3.242: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 237
+Table 3.243: Laikipia County Health Facilities FIF Performance in FY2024/25 -------------------------------------- 238
+Table 3.244: Laikipia County Health Facilities Expenditure Performance in FY 2024/25 ---------------------------- 238
+Table 3.245: Laikipia County, List of Development Projects with the Highest Expenditure ------------------------- 238
+Table 3.246: Laikipia County, Budget Allocation and Absorption Rate by Department ------------------------------ 239
+Table 3.247: Lamu County, Revenue Performance in FY 2024/25 ----------------------------------------------------- 241
+Table 3.248: Lamu County Revenue Arrears as of 30 June 2025 ------------------------------------------------------- 243
+Table 3.249: Lamu County Pending Bills as of 30 June 2025 ----------------------------------------------------------- 243
+Table 3.250: Lamu County Pending Bill Ageing Analysis as of 30th June 2025 --------------------------------------- 244
+Table 3.251: Lamu County Summary of Budget and Expenditure by Economic Classification ---------------------- 244
+Table 3.252: Breakdown of Lamu County Manual Payroll ------------------------------------------------------------- 245
+Table 3.253: Performance of Lamu County Established Funds in FY 2024/25 ---------------------------------------- 246
+Table 3.254: Performance of Lamu County Corporations in FY 2024/25 --------------------------------------------- 246
+Table 3.255: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 247
+Table 3.256: Lamu County Health Facilities FIF Performance in FY2024/25 ----------------------------------------- 248
+Table 3.257: County Health Facilities Expenditure Performance in FY 2024/25 -------------------------------------- 248
+=== Page 18 ===
+xvii
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+Table 3.258: Lamu County, List of Development Projects with the Highest Expenditure ---------------------------- 248
+Table 3.259: Lamu County Stalled Projects as of 30 June 2025 --------------------------------------------------------- 249
+Table 3.260: Lamu County, Budget Allocation and Absorption Rate by Department -------------------------------- 249
+Table 3.261: Machakos County, Revenue Performance in FY 2024/25 ------------------------------------------------ 251
+Table 3.262: Machakos County Revenue Arrears as of 30 June 2025 -------------------------------------------------- 253
+Table 3.263: Machakos County Pending Bills as of 30 June 2025 ------------------------------------------------------ 254
+Table 3.264: Machakos County Pending Bill Ageing Analysis as of 30 June 2025 ------------------------------------ 255
+Table 3.265: Machakos County Summary of Budget and Expenditure by Economic Classification ----------------- 255
+Table 3.266: Breakdown of Machakos County (Assembly) Manual Payroll ------------------------------------------- 256
+Table 3.267: Performance of Machakos County Established Funds in FY 2024/25 ----------------------------------- 257
+Table 3.268: Performance of Machakos County Corporations in FY 2024/25 ---------------------------------------- 257
+Table 3.269: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 258
+Table 3.270: Machakos County Health Facilities FIF Performance in FY2024/25 ------------------------------------ 261
+Table 3.271: Machakos County Health Facilities Expenditure Performance in FY 2024/25 ------------------------- 261
+Table 3.272: Machakos County, List of Development Projects with the Highest Expenditure ----------------------- 262
+Table 3.273: Machakos County Stalled Projects as of 30 June 2025 ---------------------------------------------------- 262
+Table 3.274: Machakos County, Budget Allocation and Absorption Rate by Department --------------------------- 265
+Table 3.275: Makueni County, Revenue Performance in FY 2024/25 ------------------------------------------------- 267
+Table 3.276: Makueni County Revenue Arrears as of 30 June 2025 ---------------------------------------------------- 269
+Table 3.277: Makueni County Pending Bills as of 30 June 2025 ------------------------------------------------------- 270
+Table 3.278: Makueni County Pending Bill Ageing Analysis as of 30 June 2025 -------------------------------------- 270
+Table 3.279: Makueni County Summary of Budget and Expenditure by Economic Classification ------------------ 271
+Table 3.280: Breakdown of Makueni County Manual Payroll ---------------------------------------------------------- 272
+Table 3.281: Performance of Makueni County Established Funds in FY 2024/25 ------------------------------------ 272
+Table 3.282: Performance of Makueni County Corporations in FY 2024/25 ------------------------------------------ 273
+Table 3.283: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 274
+Table 3.284: Makueni County Health Facilities FIF Performance in FY2024/25 ------------------------------------- 275
+Table 3.285: Makueni County Health Facilities Expenditure Performance in FY 2024/25 --------------------------- 275
+Table 3.286: Makueni County, List of Development Projects with the Highest Expenditure ------------------------ 275
+Table 3.287: Makueni County, Budget Allocation and Absorption Rate by Department ----------------------------- 276
+=== Page 19 ===
+xviii
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+Table 3.288: Mandera County, Revenue Performance in FY 2024/25 ------------------------------------------------- 278
+Table 3.289:  Mandera County Pending Bills as of 30 June 2025 ------------------------------------------------------- 281
+Table 3.290: County Mandera Pending Bill Ageing Analysis as of 30 June 2025 -------------------------------------- 281
+Table 3.291: Mandera County Summary of Budget and Expenditure by Economic Classification ------------------ 281
+Table 3.292: Breakdown of Mandera County Manual Payroll ---------------------------------------------------------- 282
+Table 3.293: Performance of Mandera County Established Funds in FY 2024/25 ------------------------------------ 283
+Table 3.294: Performance of Mandera County Corporations in FY 2024/25 ----------------------------------------- 283
+Table 3.295: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 284
+Table 3.296: Mandera County Health Facilities FIF Performance in FY2024/25 ------------------------------------- 285
+Table 3.297: Mandera County Health Facilities Expenditure Performance in FY 2024/25 --------------------------- 286
+Table 3.298: Mandera County, List of Development Projects with the Highest Expenditure ------------------------ 286
+Table 3.299: Mandera County, Budget Allocation and Absorption Rate by Department ----------------------------- 287
+Table 3.300: Marsabit County, Revenue Performance in FY 2024/25 -------------------------------------------------- 289
+Table 3.301: Marsabit County Revenue Arrears as of 30 June 2025 ---------------------------------------------------- 291
+Table 3.302: Marsabit County Pending Bills as of 30 June 2025 -------------------------------------------------------- 292
+Table 3.303: County Marsabit Pending Bill Ageing Analysis as of 30 June 2025 -------------------------------------- 292
+Table 3.304: Marsabit County Summary of Budget and Expenditure by Economic Classification ------------------ 292
+Table 3.305: Breakdown of Marsabit County Manual Payroll ---------------------------------------------------------- 293
+Table 3.306: Performance of Marsabit County Established Funds in FY 2024/25 ------------------------------------ 294
+Table 3.307: Performance of Marsabit County Corporations in FY 2024/25 ------------------------------------------ 295
+Table 3.308: Summary of Expenditure on Foreign Travel in FY 2024/25 ---------------------------------------------- 295
+Table 3.309: Marsabit County Health Facilities FIF Performance in FY2024/25 -------------------------------------- 296
+Table 3.310: Marsabit County Health Facilities Expenditure Performance in FY 2024/25 --------------------------- 297
+Table 3.311: Marsabit County, List of Development Projects with the Highest Expenditure ------------------------- 297
+Table 3.312: Marsabit County, Budget Allocation and Absorption Rate by Department ----------------------------- 298
+Table 3.313: Meru County, Revenue Performance in FY 2024/25 ----------------------------------------------------- 300
+Table 3.314: Meru County Pending Bills as of 30 June 2025 ----------------------------------------------------------- 302
+Table 3.315: County Meru Pending Bill Ageing Analysis as of 30th June 2025 --------------------------------------- 303
+Table 3.316: Meru County Summary of Budget and Expenditure by Economic Classification ---------------------- 303
+Table 3.317: Breakdown of Meru County Manual Payroll-------------------------------------------------------------- 304

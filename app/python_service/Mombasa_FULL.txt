@@ -1,0 +1,1016 @@
+
+=== Page 368 ===
+324
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+3.27.16 Key Observations and Recommendations
+In the course of overseeing and reporting on the implementation of the County budget, the CoB identified the fol-
+lowing challenges, which hampered effective budget implementation;
+i. Unspent funds from FY 2023/24 were not refunded into the CRF account, resulting in actual expenditures 
+exceeding the approved exchequer issues in four departments, as shown in Table 3.336 on development 
+budget. 
+ii. Regulation 197(1)(i) of the Public Finance Management (County Governments) Regulations, 2015, limits 
+the lifespan of public funds to 10 years unless extended by the County Assembly. During the reporting peri-
+od, the CoB found that the lifespan of the County Education Bursary Fund and the County Scholarships & 
+Educational Benefits Fund had expired, making them ineligible for further withdrawals.
+iii. Use of manual payroll. Personnel emoluments amounting to Kshs.147.39 million for 713 casual staff and 
+3,388 Community Health Promoters (CHVs) were processed through manual payroll accounting for 4 per 
+cent of the total payroll cost. Manual payroll is prone to abuse and may result in the loss of public funds.
+iv. During FY2024/25, health facilities were owed a combined total of Kshs.212.28 million across the two 
+schemes—SHIF and the defunct NHIF .
+The County should implement the following recommendations to improve budget execution:
+i. The County Treasury should ensure unspent funds from the previous financial year are deposited into the CRF 
+Account in line with Section 136 of the PFM Act 2012.
+ii. The County should ensure the timely review and extension of public funds whose lifespan is nearing expiration 
+to prevent operational disruptions. Additionally, any expenditure from lapsed funds should cease immediately, 
+and legal mechanisms should be followed to re-establish or wind up such funds in compliance with the Public 
+Finance Management Act.
+iii. The Government requires that salaries be processed through the HRIS system, and the County is advised to 
+fast-track the acquisition of Unified Personnel Numbers for their casual staff. The County Public Service Board 
+should regulate staff engagement on contract and casual workers as provided under Section 74 of the County 
+Governments Act 2012. Furthermore, strict adherence to the approved staff establishment should be main-
+tained.
+iv. The County Leadership should liaise with the Social Health Authority for the settlement of outstanding claims. 
+3.28. County Government of Mombasa
+3.28.1 Overview of FY 2024/25 Budget
+The Mombasa County Approved Supplementary I Budget for FY 2024/25 was Kshs.17.36 billion. It comprised 
+Kshs.5.52 billion (32 per cent) and Kshs.11.84 billion (68 per cent) allocation for development and recurrent pro -
+grammes, respectively. The budget estimates represented an increase of Kshs.1.37 billion (9 per cent) from the FY 
+2023/24 budget comprised a development budget of Kshs.4.80 billion and a recurrent budget of Kshs.11.19 billion. 
+The increase in the budget was primarily attributed to growth in revenue. 
+The budget was to be financed from various revenue sources, including the equitable share of revenue raised nation-
+ally, amounting to Kshs.7.90 billion (46 per cent), additional allocations of Kshs.2.17 million (12 per cent), a cash 
+balance of Kshs.363.74 million (2 per cent) brought forward from FY 2023/24, and Kshs.6.93 billion (40 per cent) 
+generated as own-source revenue. The own-source revenue comprised Kshs.5.68 billion (33 per cent) deposited into 
+the CRF and Kshs.1.25 billion (7 per cent) as the Facility Improvement Financing (revenue from health facilities). A 
+breakdown of the additional allocations is shown in Table 3.337.
+3.28.2 Revenue Performance
+The County received Kshs.14.73 billion in revenues in the review period to fund its development and recurrent 
+activities. This amount represented an increase of 7 per cent compared to the amount received in FY 2023/24 of 
+Kshs.13.81 billion. The total revenue consisted of Kshs.7.90 billion from the equitable share of revenue raised nation-
+ally. Other revenue streams were additional allocations from the national government and development partners of 
+Kshs.1.34 billion and own-source revenue (OSR) collection of Kshs.5.13 billion. Additionally, the County had a cash 
+balance of Kshs.363.74 million from FY 2023/24. 
+The total OSR collection of Kshs.5.13 billion included Facilities Improvement Financing (FIF) of Kshs.916.99 mil -
+lion, and Kshs.4.21 billion from other OSR sources. Table 3.337 summarises the total revenue available to the County 
+Government during FY 2024/25. 
+=== Page 369 ===
+325
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+Table 3.337: Mombasa County, Revenue Performance in FY 2024/25
+S/No Revenue Annual Budget Allo-
+cation (in Kshs)
+Actual Receipts 
+(in Kshs.) 
+Actual Receipts as 
+Percentage of Annual 
+Allocation (%)
+A. Equitable Share of Revenue Raised Nationally 7,899,674,509 7,899,674,509 100
+Sub Total  7,899,674,509  7,899,674,509 100
+B Conditional Grants   
+1 Allocation for court fines 13,428,433  -
+2 Kenya Devolution Support Programme 2 (KDSP 
+II) 37,500,000  -
+3 SWEDEN - Kenya Agricultural Business Devel-
+opment Project (KABDP) 10,918,919  -
+4 DANIDA- Primary Health Care in Devolved 
+System Program 10,871,250 10,871,250 100
+5 Community Health Promoters Program 71,610,000  -
+6 Basis Salary Arrears for County Government 
+Health Workers 108,971,914  -
+7 World Bank - Kenya Informal Settlement Im-
+provement Project (KISIP II) 860,000,000 695,000,000 81
+8 World Bank - Water and Sanitation Development 
+Project 1,000,000,000 585,006,309 59
+9 County Aggregation and Industrial Parks (CAIP) 
+Programme 52,631,579 52,631,579 100
+Sub-Total 2,165,932,095 1,343,509,138 62
+C Other Sources of Revenue   
+1 Ordinary Own Source Revenue 5,680,656,709 4,208,725,862 74
+2 Balance b/f from FY2023/24  363,738,170  363,738,170 100
+3 Facility Improvement Fund (FIF) 1,249,998,988 916,985,624 73
+4 Other Revenues   - -
+5 Appropriation in Aid (AIA)  -  - -
+Sub Total 7,294,393,867 5,489,449,656 75
+Grand Total  17,360,000,471 14,732,633,303 85
+Source: Mombasa County Treasury
+Figure 109 shows the collection trend in own-source revenue from FY 2019/20 to FY 2024/25.
+Figure 109: Mombasa County Trend in Own-Source Revenue Collection from FY 2019/20 to FY 2024/25
+Source: Mombasa County Treasury
+=== Page 370 ===
+326
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+During the year, the County generated Kshs.5.13 billion from its revenue sources, including FIF . This amount was a 
+decrease of 8 per cent compared to Kshs.5.59 billion realised in a similar period in FY 2023/24, and was 74 per cent 
+of the annual target and 65 per cent of the equitable revenue share disbursed. The OSR included revenue arrears and 
+penalties charged on fees and levies from previous financial years, amounting to Kshs.1.51 billion.
+The revenue streams which contributed the highest OSR receipts are shown in Figure 110.
+Figure 110: Mombasa County Top Own Source Revenue Streams in FY 2024/25 
+Source: Mombasa County Treasury 
+As shown in Figure 110, the highest revenue stream, at Kshs.1.4 billion, was from Public health services fees, which 
+account for 27 per cent of the total OSR receipts. The County Government has automated all its revenue streams.
+3.28.3 Revenue Arrears
+At the beginning of the financial year, the County had outstanding revenue arrears of Kshs.15.67 billion. This amount 
+decreased to Kshs.13.75 billion as of 30 June 2025, indicating that the County had reduced the arrears . Table 3.338  
+presents a breakdown of the County’s revenue arrears.
+Table 3.338: Mombasa County Revenue Arrears as of 30 June 2025
+No Revenue Stream
+Revenue Arrears 
+as of 30 June 2024 
+(Kshs.)
+Progress made in FY 2024/25
+OSR Arrears as 
+of 30 June 2025 
+(Kshs.)Waivers (Kshs)
+Arrears paid in 
+the financial year 
+(Kshs)
+Arrears earned in 
+FY 2024/25 (Kshs)
+ a b c d f=a-b-c+d
+1 Ordinary Own Sources of 
+Revenue  15,668,382,248  2,497,250,486  1,508,475,083  756,176,362  12,418,833,041 
+Plot Rate  14,887,827,350  2,412,934,986  922,713,676  756,176,362  12,308,355,050
+Single Business Permit  780,554,898  84,315,500  585,761,407  -  110,477,991
+2 Facility Improvement Fund 
+(FIF)      1,326,332,210
+Total  15,668,382,248  2,497,250,486  1,508,475,083  756,176,362  13,745,165,251 
+Source: Mombasa County Treasuries
+3.28.4 Borrowing by the County
+The County did not disclose any borrowings made during the FY 2024/25.
+=== Page 371 ===
+327
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+3.28.5 Exchequers Approved
+The Controller of Budget approved withdrawals of Kshs.13.71 billion from the CRF account in FY 2024/25, which 
+comprised Kshs.3.47 billion (25 per cent) for development programmes and Kshs.10.25 billion (75 per cent) for re-
+current programmes. Analysis of the recurrent exchequers released indicates that Kshs.6.80 billion was for employee 
+compensation and Kshs.3.45 billion for operations and maintenance expenditure. 
+As of the closure of FY 2024/25, the County Government’s cash balance in the CRF account was Kshs.162.33 million. 
+3.28.6 County Expenditure Review
+The County spent Kshs.13.52 billion on development and recurrent programmes in the reporting period. The expen-
+diture represented 99 per cent of the total funds released by the CoB. It comprised Kshs.3.34 billion for development 
+programmes and Kshs.10.09 billion for recurrent programmes. Expenditure on development programmes repre -
+sented an absorption rate of 62 per cent, while recurrent expenditure represented 85 per cent of the annual recurrent 
+expenditure budget.
+3.28.7 Settlement of Pending Bills
+As of 30 June 2024, the County reported pending bills totalling Kshs.4.47 billion. This amount included Kshs.4.46 
+billion from the County Executive and Kshs.16.99 million from the County Assembly. The pending bills from the 
+County Executive consisted of Kshs.2.75 billion for recurrent expenditures and Kshs.1.70 billion for development 
+expenditures. 
+During the year, the County Executive settled pending bills amounting to Kshs.1.37 billion, comprising Kshs.925.29 
+million (33 per cent) for recurrent programmes and Kshs.439.02 million (26 per cent) for development programmes. 
+On the other hand, the County Assembly settled pending bills worth Kshs.14.60 million, which included Kshs.9.71 
+million (67 per cent) for recurrent activities and Kshs.4.89 million (100 per cent) for development activities. Table 
+3.339 provides additional details of pending bills.
+Table 3.339: Mombasa County Pending Bills as of 30 June 2025
+ Pending Bills as of 1 
+July 2024 (Kshs.)
+Settled Pending Bills in 
+FY 2024/25 (Kshs.)
+Pending bills incurred 
+in FY 2024/25 (Kshs.)
+Outstanding pending bills 
+as of 30 June 2025 (Kshs.)
+County Executive
+Recurrent  2,752,819,850  915,576,188  604,164,660  2,439,361,521 
+Development  1,702,209,902  439,024,946  59,976,289  1,310,750,537 
+Total  4,455,029,752  1,354,601,134  664,140,949  3,750,112,058
+Assembly
+Recurrent  12,104,766  9,714,168  115,147,662  117,538,260 
+Development  4,888,414  4,888,414  -  -
+Total  16,993,180  14,602,582  115,147,662  
+ Source: Mombasa County Treasury
+The County Executive and the Assembly submitted a pending bills payment plan, committing to pay Kshs.739.99 
+million and Kshs.24.88 million, respectively, in FY 2024/25. The County adhered to this payment plan, as it cleared 
+Kshs.1.35 billion for the Executive and Kshs.14.60 million for the Assembly.
+Table 3.340 presents the ageing of the total outstanding bills as of 30 June 2025, which was Kshs.3.87 billion.
+Table 3.340: Mombasa County Pending Bill Ageing Analysis as of 30 June 2025
+Category Ageing analysis (Amount in Kshs.) TotalUnder one year 1-2 years 2-3 years Over 3 years
+Development Pending Bills  59,976,289    1,250,774,247  1,310,750,537 
+Recurrent Pending Bills (Goods & Services)  105,938,115  2,549,009   1,435,378,129  1,543,865,252 
+Recurrent Pending Bills (Salary Arrears and 
+Statutory Deductions)  604,704,439    401,081,830  1,005,786,269 
+Recurrent Pending Bills (Staff Claims)  7,248,260    -  7,248,260 
+Total Recurrent Pending Bills  717,890,814  2,549,009  -  1,836,459,958  2,556,899,781 
+=== Page 372 ===
+328
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+Category Ageing analysis (Amount in Kshs.) TotalUnder one year 1-2 years 2-3 years Over 3 years
+ Total Pending Bills  777,867,103  2,549,009  -  3,087,234,206  3,867,650,318 
+% of Total 20 0 - 80 100
+ Source: Mombasa County Treasury
+From the pending bills analysis, the OCOB established that pending bills accumulated for over three years make up 
+80 per cent of the total compared to those under one year. The County treasury is, therefore, to pay pending bills on 
+a FIFO basis (First In, First Out) and ensure compliance with the Pending Bills Action Plan.
+3.28.8  Expenditure by Economic Classification
+The County Executive incurred Kshs.6.55 billion for compensation of employees, Kshs.2.60 billion for operations 
+and maintenance, and Kshs.3.37 billion for development activities. Similarly, the County Assembly spent Kshs.389.67 
+million on compensation of employees, Kshs.351.17 million on operations and maintenance, and Kshs.64.82 million 
+on development activities, as shown in Table 3.341.
+Table 3.341: Mombasa County Summary of Budget and Expenditure by Economic Classification
+Expenditure Classifi-
+cation 
+Supplementary Budget 1 (Kshs.) Expenditure (Kshs) Absorption (%)
+County Executive County Assem-
+bly County Executive County Assem-
+bly
+County 
+Executive
+County 
+Assem-
+bly
+ Total Recurrent Ex-
+penditure  11,097,242,241  743,934,584  9,144,912,813  740,844,845 82 100
+ Compensation to Em-
+ployees  6,712,184,703  392,004,877  6,545,407,047  389,673,582 98 99
+ Operations and Main-
+tenance  4,385,057,538  351,929,707  2,599,505,766  351,171,264 59 100
+ Development Expen-
+diture  5,441,911,865  80,000,000  3,365,650,618  64,823,579 62 81
+ Total  16,539,154,106  823,934,584  12,510,563,431  805,668,424 76 98
+Source: Mombasa County Treasury
+3.28.9 Expenditure on Compensation of Employees 
+During the period under review, the expenditure on employee compensation totalled Kshs.6.94 billion. Therefore, 
+the percentage of compensation of employees to adjusted revenue in line with Regulation 25(1)(c) of the PRM 
+(County Governments) Regulations 2015, was 47 per cent. This expenditure on employee compensation shows a de-
+crease compared to the Kshs.6.86 billion reported in FY 2023/24. Of this total, Kshs.3.28 billion related to the Health 
+Sector employees, which accounted for 47 per cent of the overall employees’ compensation.
+Figure 111 shows the compensation trend of employees’ expenditures as a percentage of total revenue received from 
+FY 2019/20 to FY 2024/25.
+=== Page 373 ===
+329
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+Figure 111: Percentage of Employee Compensation to Total Revenue Received from FY 2019/20 to FY 
+2024/25
+Source: Mombasa County Treasury
+Further analysis revealed that PE costs totalling Kshs.5.70 billion were processed through the Human Resource In-
+formation System (HRIS), while Kshs.404.19 million was processed through manual payroll, which accounted for 7 
+per cent of the total PE cost. 
+The manual payroll comprised salaries for staff not onboarded into the Human Resource Information System (HRIS), 
+salaries for casuals, gratuity remittances to pension schemes for staff on contract, and LAPTRUST/LAPFUND Pen-
+sion Contributions, as shown in Table 3.342.
+Table 3.342: Breakdown of Mombasa County Manual Payroll
+Category County Executive County Assembly Total
+Salaries for staff paid outside the Human Resource Information 
+System (HRIS) 294,610,150 1,073,650 295,683,800
+Salaries for casual staff 5,866,806 2,962,457.0 8,829,263
+LAPTRUST/LAPFUND Pension Contributions - 2,056,261 2,056,261
+Gratuity for contract staff - 2,043,467 2,043,467
+(CONTRACT) 3,882 3,882
+(CASUAL/INTERNS) 299 299
+Total 300,481,137 8,135,835 308,616,972
+Source: Mombasa County Treasury
+The County Assembly spent Kshs.27.49 million on committee sitting allowances for the 43 MCAs against the annu-
+al budget allocation of Kshs.27.56 million. The average monthly sitting allowance was Kshs.53,272 per MCA. The 
+County Assembly has 21 House Committees. 
+3.28.10 County-Established Funds
+Section 116 of the PFM Act 2012 allows County Governments to establish other public funds, subject to approval 
+from the County Executive Committee and the County Assembly. The County allocated Kshs.449.20 million to 
+County-Established funds in FY 2024/25, or 3 per cent of the County’s overall budget. Further, the County allocated 
+Kshs.10 million to the Emergency Fund (0.1 per cent of the total budget) in line with Section 110 of the PFM Act, 
+2012. Table 3.343 summarises each established Fund’s budget allocation and performance during the reporting pe-
+riod. 
+=== Page 374 ===
+330
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+Table 3.343: Performance of Mombasa County Established Funds in FY 2024/25
+S/No. Name of the Fund Y ear Estab-
+lished
+Approved 
+Budget 
+Allocation in 
+FY 2024/25 
+(Kshs.)
+Exchequer 
+Issues in FY 
+2024/25
+(Kshs.)
+Actual Ex-
+penditure in 
+FY 2024/25 
+(Kshs.)
+Cumulative 
+disburse-
+ments to the 
+Fund 
+(Kshs)
+Submission 
+of Financial 
+Statements 
+(Y es/No.)
+County Executive Established Funds
+1 Mombasa County 
+Elimu Scheme 2023 399,200,000 339,500,000 334,344,791 1,694,527,622 YES
+County Assembly Established Funds
+2 Mombasa County 
+Assembly Car Loans 
+and Mortgage for 
+Members and Staff
+2021
+40,000,000 40,000,000
+YES
+Total
+Source: Mombasa County Treasury
+Regulation 197(1)(i) of the Public Finance Management (County Governments) Regulations, 2015, allows County 
+Governments to establish public funds with a lifespan capped at 10 years unless extended by the County Assembly. 
+In FY 2024/25, the CoB confirmed that the lifespan of the two funds aligns with the timelines. 
+3.28.11 County Corporations
+The County has one Corporation, which was allocated Kshs.30 million in FY 2024/25. Their total expenditure for the 
+year amounted to Kshs.28.81 million as shown in Table 3.344.
+Table 3.344: Performance of Mombasa County Corporations in FY 2024/25
+S/No. Name of the Corporation Approved Budget 
+Allocation in FY 
+2024/25 (Kshs.)
+Exchequer Issues in 
+FY 2024/25
+(Kshs.)
+Actual Expendi-
+ture in FY 2024/25 
+(Kshs.)
+Cumulative Exche-
+quer Issues to the 
+Corporation since 
+its inception (Kshs.)
+Mombasa Investment 
+Corporation 30,000,000 30,000,000 28,812,780 55,000,000
+Source: Mombasa County Treasury
+3.28.12 Expenditure on Operations and Maintenance 
+Figure 112 summarises the Operations and Maintenance expenditure by major categories.
+Figure 112: Mombasa County, Operations and Maintenance Expenditure by Major Categories
+Source: Mombasa County Treasury
+=== Page 375 ===
+331
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+Expenditure on domestic travel amounted to Kshs.182.24 million and comprised Kshs.62.62 million spent by the 
+County Assembly and Kshs.119.62 million by the County Executive. Expenditure on foreign travel amounted to 
+Kshs.112.19 million and comprised Kshs.60.89 million by the County Assembly and Kshs.51.31 million by the 
+County Executive. Expenditure on foreign travel is summarised in Table 3.345.
+Table 3.345: Summary of Expenditure on Foreign Travel in FY 2024/25
+Arm of Coun-
+ty Govern-
+ment
+No. of 
+Officers 
+Travelled
+Date travelled Purpose of the travel Destination  Total Costs 
+of the Travel
+Executive 2 17th-27th July 
+2024
+TURKEY VISIT TO ONDAKUZ AND KARABUK UNI-
+VERSITY - PURPOSE OF MOU AND SCHOLARSHIP 
+PROGRAM FOR THE COUNTY OF MOMBASA
+TURKEY  1,805,022 
+Executive 4 4th-10th No-
+vember 2024
+FACILITATION FOR INVITATION TO INTERNATIONAL 
+ANDALUS CONFERENCE IN GRANDA 4-10 NOV 2024 
+SPAIN
+SPAIN  3,371,900 
+Executive 2 11th - 18th No-
+vember 2024
+FACILITATION TO ATTEND THE PUBLIC SECTOR 
+GOVERNANCE CONFERENCE FROM 11 - 18 NOV 2024 
+ISTANBUL, TURKEY
+TURKEY  1,667,608 
+Executive 2 11th-14th No-
+vember 2024
+FACILITATION TO TRA VEL TO INCHEON, SOUTH KO-
+REA, ACCOMPANYING THE GOVERNOR TO ATTEND 
+THE GLOBAL TOP 10 CITY WEEK, WORLD SMART 
+CITIES FORUM(WSCF)
+SOUTH 
+KOREA  652,140 
+Executive 1   TRA VEL TO TOKYO AND KYOTO, JAPAN, TO ATTEND 
+A TECHNICAL DEEP DIVE AND CLIMATE CHANGE JAPAN  214,477 
+Executive 1
+23rd October- 
+5th November 
+2024
+FACILITATION FOR TRA VEL TO PARTICIPATE IN THE 
+AFRICA - US TRADE & INVESTMENT MISSION TO 
+SETTLE CITY , WASHINGTON, IN THE USA 23-OCT-
+2024 TO 5 NOV 2024
+USA  835,530 
+Executive 1 31st- 5th No-
+vember 2024
+FACILITATION TO ATTEND GLOBAL QUALITY OF 
+LIFE CONFERENCE IN CAIRO, EGYPT FROM OCTO-
+BER 31ST 2024-NOVEMBER 5TH 2024
+EGYPT  487,650 
+Executive 1 18th-27th Sep-
+tember 2024
+FACILITATION TO ATTEND THE UNSTOPPABLE AFRI-
+CA 2024 EVENT IN NEW YORK 18-27 SEPT 2024 USA  916,590 
+Executive 12 23rd-28th Feb-
+ruary 2025
+FACILITATION TO ATTEND EALASCA GAMES 2025 IN 
+KAMPALA, UGANDA UGANDA  3,943,580 
+Executive 2 18th-22nd No-
+vember 2024
+CLAIM FOR TRA VEL TO UGANDA TO ATTEND MOM-
+BASA TOURISM EXHIBITION UGANDA  587,520 
+Executive 1 11th-14th Sep-
+tember 2024
+THE INTER-REGIONAL AGRICULTURE SYMPOSIUM 
+ATTENDED AT BOTSWANA FROM 11TH-14TH SEP-
+TEMBER 2024
+BOTSWANA  243,349 
+Executive   11th-16th Feb-
+ruary 2025
+FACILITATION FOR TRA VEL TO ADDIS ABABA FOR 
+THE AUC ELECTIONS FROM 11TH-16TH FEBRUARY 
+2025
+ETHIOPIA  1,276,940 
+Executive 1   FACILITATION TO ATTEND TECHNICAL DEEP DIVE 
+ON WATERFRONT DEVELOPMENT IN JAPAN JAPAN  291,553 
+Executive 1   TRA VEL EXPENSES DURING A WORKSHOP AT CHI-
+HEAM BARI, ITALY ITALY  249,708.15 
+Assembly 2 8TH-13TH OC-
+TOBER 2024 INAUGURAL SEOUL SMART LIFE WEEK 2024-KOREA KOREA  553,715 
+Assembly 5 9TH-15TH OC-
+TOBER 2024
+TRAINING ON PUBLIC POLICY , GOVERNANCE AND 
+CONFLICT MGT 2024-SINGAPORE SINGAPORE  2,998,050.50 
+Assembly 5 8TH-14TH OC-
+TOBER 2024
+TRAINING ON LABOUR AND MANPOWER RELA-
+TIONS 2024-SINGAPORE SINGAPORE  3,082,092.50 
+Assembly 6 31ST OCT-8TH 
+NOV 2024
+TRAINING ON LEGISLATIVE BEST PRACTICES & 
+POLICY DEVELOPMENT Dubai  3,615,840 
+Assembly 6 29TH OCT-6TH 
+NOV 2024
+TRAINING ON FUNDAMENTALS OF LEGISLATIVE 
+PROCESS Dubai  3,615,840 
+Assembly 6
+14TH-22ND 
+NOVEMBER 
+2024
+BEING PAYMENT FOR NIGHTOUTS & TRANS-
+PORT-UNDERSTANDING LEGISLATIVE ROLES & 
+RESPONSIBILITIES TRAINING - DUBAI
+Dubai  3,416,160 
+Assembly 6
+12TH-20TH 
+NOVEMBER 
+2024
+BEING PAYMENT FOR NIGHTOUTS & TRANS-
+PORT-OVERSIGHT & MONITORING OF COUNTY 
+EXECUTIVE TRAINING - DUBAI
+Dubai  3,615,840 
+=== Page 376 ===
+332
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+Arm of Coun-
+ty Govern-
+ment
+No. of 
+Officers 
+Travelled
+Date travelled Purpose of the travel Destination  Total Costs 
+of the Travel
+Assembly 6
+09TH-17TH 
+NOVEMBER 
+2024
+BEING PAYMENT FOR NIGHTOUTS & TRANS-
+PORT-PUBLIC PARTICIPATION & STAKEHOLDERS EN-
+GAGEMENT IN THE LAW MAKING PROCESS - DUBAI
+Dubai  3,553,440 
+Assembly 7
+18TH-26TH 
+NOVEMBER 
+2024
+BEING PREPAID FOR TRAINING ON ECONOMIC 
+EMPOWERMENT & LIVELIHOOD DEVELOPMENT - 
+ARUSHA
+Tanzania  2,398,480 
+Assembly 7 23RD NOV-1ST 
+DEC 2024
+BEING PRE-PAYMENT FOR TRAINING ON DISASTER 
+PREPAREDNESS & RISK MANAGEMENT PROGRAM 
+- DUBAI
+Dubai  4,156,080 
+Assembly 2 28TH OCT - 
+4TH NOV 2024
+BEING PAYMENT FOR THE CLAIM OF THE LEADING 
+TRANSITION PROGRAMME, CHAMP ELYSEES, PARIS Paris  930,850 
+Assembly 1 23RD APRIL-
+2ND MAY 2025
+TRAINING ON LEADERSHIP IN INNOV ATION AND 
+CRISIS MANAGEMENT-NETHERLANDS Netherlands  560,344 
+Assembly 7 23RD-30TH 
+APRIL 2025
+TRAINING ON INTEGRATED WATER RESOURCE 
+MANAGEMENT FOR SUSTAINABLE DEVELOPMENT 
+AND CLIMATE RESILIENCE-DUBAI
+Dubai  3,790,276 
+Assembly 7 25TH APRIL-
+2ND MAY 2025
+TRAINING ON ENHANCING AGRICULTURAL PRO-
+DUCTIVITY THRU’ CLIMATE-SMART PRACTICES 
+AND TECHNOLOGY ADOPTION-DUBAI
+Dubai  3,856,804 
+Assembly 7 2ND-9TH MAY 
+2025
+TRAINING ON ENGAGING THE PUBLIC IN PARTICIPA-
+TORY BUDGETING-DUBAI Dubai  3,856,804 
+Assembly 7 12TH-19TH 
+MAY 2025
+TRAINING ON COUNTY LEVEL SUPPORT FOR SPE-
+CIAL NEEDS EDUCATION AND SCHOOL FEEDING 
+PROGRAMMES-DUBAI
+Dubai  3,790,276 
+Assembly 7 14TH-21ST 
+MAY 2025
+TRAINING ON IMPLEMENTATION OF HEALTH PROJ-
+ECTS-DUBAI Dubai  3,790,276 
+Assembly 7 16TH-23RD 
+MAY 2025
+TRAINING ON OVERSIGHT OF COUNTY DEPART-
+MENTS AND AGENCIES-DUBAI Dubai  3,734,836 
+Assembly 4
+26TH MAY-
+02ND JUNE 
+2025
+TRAINING ON STRENGTHENING LEGAL OVERSIGHT 
+- DUBAI Dubai  2,081,920 
+Assembly 5 11TH-18TH 
+JUNE 2025
+BEING PRE-PAYMENT FOR DIGITAL TRANSFORMA-
+TION IN C/A SERVICE BOARD - DUBAI Dubai  2,850,032 
+Source: Mombasa County Treasury and Mombasa County Assembly
+3.28.13 Facility Improvement Financing
+In FY 2024/25, the County reported collections of Kshs.916.99 million as FIF , which was 73 per cent of the annual 
+target of Kshs.1.25 billion. The collected amount was retained and utilised at source in line with the Facility Improve-
+ment Financing Act, 2023. The County has developed regulations to operationalise the FIF Act of 2023.
+Health facilities were owed a combined total of Kshs.1.33 billion in the reporting period across the two schemes, 
+namely the Social Health Insurance Fund (SHIF), and outstanding debts from the defunct National Health Insurance 
+Fund (NHIF). A breakdown of the claims is presented in Table 3.346.
+Table 3.346: Mombasa County Health Facilities FIF Performance in FY2024/25
+S/no Level of Health Facility and number of facilities
+ SHIF/SHA (Kshs.)  NHIF (Kshs.) 
+ Approved Claims  Claims Paid  Balance  Pending Debt 
+1  CGTRH (Level 5) 644,998,362 387,976,337 257,022,025 236,711,819
+2  Utange Field Hospital (Level 4) 6,919,930 1,595,920 5,324,010 -
+3  CGTRH CHAANI OUTREACH (Level 3) - 1,677,720 - 1,684,405
+4  CGTRH VIKW ATANI OUTREACH (Level 3) - 3,099,497 - 251,460
+5  CGTRH MTONGWE OUTREACH (Level 3) - 2,699,591 - 970,530
+6  One Level 5 Hospital 734,864,278 381,780,205 353,084,073 209,000,012
+7  Eight Level 4 Health Facilities SHIF/ Nine SHA 170,741,796 81,332,840 89,408,955 84,801,273
+8  Seven Level 3 Health Facilities 40,383,633 29,698,871 10,684,763 12,675,384
+=== Page 377 ===
+333
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+S/no Level of Health Facility and number of facilities
+ SHIF/SHA (Kshs.)  NHIF (Kshs.) 
+ Approved Claims  Claims Paid  Balance  Pending Debt 
+9  Eight level 2 Health Facilities SHIF/ Thirty SHA 75,527,460 27,124,643 48,402,817 16,310,684
+  Total 1,673,435,460 916,985,624 763,926,643 562,405,567
+Source: Mombasa County Treasury
+In FY 2024/25, health facilities recorded approved claims from the SHIF totalling Kshs.1.67 billion, yet actual dis -
+bursements amounted to Kshs.916.99 million, resulting in an outstanding balance of Kshs.763.93 million. Further, 
+the defunct NHIF still owes health facilities Kshs.562.41 million. 
+The expenditure by the health facilities amounted to Kshs.2.60 billion, as shown in Table 3.347.
+Table 3.347: Mombasa County Health Facilities Expenditure Performance in FY 2024/25
+No. Level of Health Facility and number of 
+facilities
+ Approved Budget for the Fa-
+cility (Kshs.) 
+ Actual Expenditure of the Facil -
+ity (Kshs.) Absorption rate (%)
+1 CGTRH (Level 5) 2,284,617,578 2,248,173,327 98
+2 Utange Field Hospital (Level 4) 19,560,006 30,730,045 157
+3 CGTRH CHAANI OUTREACH (Level 
+3) 14,622,208 15,533,173 106
+4 CGTRH VIKW ATANI OUTREACH 
+(Level 3) 14,622,208 15,736,243 108
+5 CGTRH MTONGWE OUTREACH 
+(Level 3) 16,578,000 16,935,034 102
+6 One Level 5 Hospital 650,000,000 75,958,708 12
+7 4 Level 4 Health Facilities 132,000,000 131,962,538 100
+8 36 Level 2 and 3 Health Facilities 157,680,000 60,119,054 38
+ Total 3,289,680,000 2,595,148,123 79
+Source: Mombasa County Treasury
+No explanation was provided regarding the overperformance of the four health facilities.
+3.28.14 Development Expenditure 
+In the review period, the County reported spending Kshs.3.43 billion on development programmes, representing an 
+increase of 65 per cent compared to FY 2023/24, when the County spent Kshs.2.08 billion. Table 3.348 summarises 
+the development projects with the highest expenditure in the reporting period.
+Table 3.348: Mombasa County, List of Development Projects with the Highest Expenditure
+No. Sector Project Name Project Loca-
+tion
+Expected 
+Completion 
+Date
+ Contract 
+sum (Kshs) 
+Amount 
+paid in the 
+FY 2024/25 
+(Kshs.) 
+ Cumulative 
+Expenditure 
+as of 30 June 
+2025 
+Implemen-
+tation status 
+(%)
+1
+Mombasa -Public 
+Service Admin, 
+Y outh, Gender & 
+Social Services And 
+Sports
+Proposed 
+renovation 
+of the Bomu 
+Stadium
+BOMU N/A 26,944,170 18,084,150 18,084,150 67
+2
+Mombasa -Public 
+Service Admin, 
+Y outh, Gender & 
+Social Services And 
+Sports
+Proposal for 
+uiwanja wa 
+mbuzi stadi-
+um industrial 
+parks
+TONONOKA 
+W ARD- MVITA 
+SUB COUNTY
+N/A 17,392,080 8,729,096 8,729,096 50
+3
+Mombasa -Public 
+Service Admin, 
+Y outh, Gender & 
+Social Services And 
+Sports
+Proposal for 
+uiwanja wa 
+mbuzi stadi-
+um industrial 
+parks
+TONONOKA 
+W ARD- MVITA 
+SUB COUNTY
+N/A 17,392,080 8,496,134 8,496,134 49
+4
+Mombasa - Finance 
+and Economic 
+Planning
+Consultancy 
+service for 
+training needs 
+assessment 
+MOMBASA 
+COUNTY N/A 6,823,564 6,823,564 6,823,564 100
+=== Page 378 ===
+334
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+No. Sector Project Name Project Loca-
+tion
+Expected 
+Completion 
+Date
+ Contract 
+sum (Kshs) 
+Amount 
+paid in the 
+FY 2024/25 
+(Kshs.) 
+ Cumulative 
+Expenditure 
+as of 30 June 
+2025 
+Implemen-
+tation status 
+(%)
+5 Mombasa - EDU-
+CATION
+Proposed 
+construction 
+of ECD centre 
+at Amani Pri-
+mary School
+MIKINDANI 
+W ARD N/A 17,722,207 5,860,582 5,860,582 33
+6
+Mombasa - Finance 
+and Economic 
+Planning
+Consultancy 
+service for 
+training needs 
+assessment 
+MOMBASA 
+COUNTY N/A 5,183,034 5,183,034 5,183,034 100
+7
+Mombasa - Finance 
+and Economic 
+Planning
+Consultancy 
+service for 
+training needs 
+assessment 
+(June)
+MOMBASA 
+COUNTY N/A 5,117,744 5,117,744 5,117,744 100
+8
+Mombasa - Finance 
+and Economic 
+Planning
+Proposed 
+extension of 
+Likoni fire 
+station in 
+Mombasa 
+County
+LIKONI FIRE 
+STATION N/A 4,986,230 4,986,230 4,986,230 100
+9
+Mombasa -finance 
+and economic 
+planning
+Routine 
+maintenance 
+of the Buxton 
+bus/matatu 
+stage, Mvita 
+sub-County 
+TONONOKA 
+W ARD- MVITA 
+SUB COUNTY
+N/A 4,983,825 4,983,794 4,983,794 100
+10
+Mombasa -finance 
+and economic 
+planning
+Completion of 
+construction 
+of Jomvu Al-
+dina Road to 
+Cabro paving 
+blocks stan-
+dard, Jomvu 
+Ward, Jomvu 
+Sub-County
+JOMVU SUB 
+COUNTY N/A 4,977,467 4,974,970 4,974,970 100
+Source: Mombasa County Treasury
+3.28.15 Budget Performance by Department 
+Table 3.349 summarises the approved budget allocation, expenditure and absorption rate by departments in the 
+period under review.
+Table 3.349: Mombasa County, Budget Allocation and Absorption Rate by Department
+ Department 
+ Budget Allocation 
+(Kshs.Millions) 
+ Exchequer Issues 
+(Kshs.Millions) 
+ Expenditure (Kshs.
+Millions) 
+ Expenditure to Ex-
+chequer Issues (%) 
+ Absorption rate 
+(%) 
+ Rec  Dev  Rec  Dev  Rec  Dev  Rec  Dev  Rec  Dev 
+ County Assembly 740.85 80.00 740.85 64.82 740.85 64.82 100 100 100 81
+ Public Service 
+Board 120.97 0.88 120.88 0.80 102.25 - 85 - 85 -
+ Finance and Eco-
+nomic Planning 1,520.76 608.30 1,241.23 330.83 1,336.08 572.85 108 173 88 94
+ Health 4,212.60 600.00 4,074.05 14.36 3,503.14 9.80 86 68 83 2
+ Transport, Infra-
+structure & Public 
+Works 
+886.30 797.67 822.12 493.76 776.81 553.20 94 112 88 69
+ Environment And 
+Governance 1,154.79 289.06 686.14 211.70 865.40 163.52 126 77 75 57
+ Education 787.03 237.00 650.27 286.51 691.82 69.21 106 24 88 29
+ Water, Natural 
+Resources, Climate 
+Change Resilience 
+214.49 1,103.95 190.36 884.11 157.86 861.44 83 97 74 78
+=== Page 379 ===
+335
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+ Department 
+ Budget Allocation 
+(Kshs.Millions) 
+ Exchequer Issues 
+(Kshs.Millions) 
+ Expenditure (Kshs.
+Millions) 
+ Expenditure to Ex-
+chequer Issues (%) 
+ Absorption rate 
+(%) 
+ Rec  Dev  Rec  Dev  Rec  Dev  Rec  Dev  Rec  Dev 
+ Public Service Ad-
+ministration, Youth, 
+Gender, Social Ser-
+vices, and Sports. 
+791.58 270.00 704.82 82.19 737.37 99.85 105 121 93 37
+ Tourism, culture & 
+Trade 539.09 239.50 375.83 83.96 430.40 110.65 115 132 80 46
+ Lands, Urban Re-
+newal And Housing 172.93 1,184.24 164.74 926.22 150.70 878.48 91 95 87 74
+ Blue Economy, 
+Cooperatives, 
+Agriculture And 
+Livestock 
+192.39 84.30 121.69 75.49 158.36 29.20 130 39 82 35
+ County Attorney 228.23 - 205.76 - 203.18 - 99 - 89 -
+ County Executive 275.86 27.01 147.35 11.79 234.73 17.45 159 148 85 65
+ Total 11,837.87 5,521.91 10,246.09 3,466.54 10,088.95 3,430.47 98 99 85 62
+Source: Mombasa County Treasury
+Analysis of expenditure by departments shows that the Department of Finance and Economic Planning recorded the 
+highest absorption rate of development budget at 94 per cent, followed by the County Assembly at 81 per cent. The 
+County Assembly had the highest percentage of recurrent expenditure to budget at 100 per cent, while the Depart -
+ment of Water, Natural Resources and Climate Change Resilience had the lowest at 74 per cent. 
+3.28.16 Key Observations and Recommendations
+In the course of overseeing and reporting on the implementation of the County budget, the CoB identified the fol-
+lowing challenges, which hampered effective budget implementation;
+i. The County Treasury’s late submission of financial reports to the Controller of Budget affected the timely 
+preparation of the budget implementation report, which was received on 13 August 2025.
+ii. There was a high level of pending bills, which amounted to Kshs.3.87 billion as of 30 June. Further, the 
+County Treasury did not adhere to the payment plan for the pending bills.
+iii. Use of manual payroll. Personnel emoluments amounting to Kshs.404.19 million for staff not onboarded 
+into HRIS and casual staff were processed through manual payroll, accounting for 7 per cent of the total 
+payroll cost. Manual payroll is prone to abuse and may result in the loss of public funds.
+iv. In the FY2024/25 reporting period, health facilities were owed a combined total of Kshs.1.33 billion across 
+the two schemes—SHIF , and the defunct NHIF . 
+The County should implement the following recommendations to improve budget execution:
+i. The County Treasury should ensure the timely preparation and submission of financial reports to the Office of 
+the Controller of Budget per the timelines prescribed in Section 166 of the PFM Act, 2012.
+ii. The County Leadership should ensure that genuine pending bills are paid promptly. Further, compliance with 
+the Pending Bills Action Plan should be enforced.
+iii. The Government requires that salaries be processed through the HRIS system, and the County is advised to 
+fast-track the acquisition of Unified Personnel Numbers for their staff. The County Public Service Board should 
+regulate staff engagement on contract and casual workers as provided under Section 74 of the County Govern-
+ments Act 2012. Furthermore, strict adherence to the approved staff establishment should be maintained.
+iv. The County Leadership should liaise with the Social Health Authority for the settlement of outstanding claims
+3.29. County Government of Murang’a
+3.29.1 Overview of FY 2024/25 Budget
+The Murang’a County Gross Approved Supplementary I Budget for FY 2024/25 is Kshs.10.74 billion. It comprises 
+Kshs.3.22 billion (30.0 per cent) and Kshs.7.53 billion (70.0 per cent) allocation for development and recurrent 
+programmes, respectively. The budget estimates represent an increase of Kshs.335.86 million (3.2 per cent) from the 
+FY 2023/24 budget that comprised a development budget of Kshs.3.12 billion and a recurrent budget of Kshs.7.29 
+billion. The increase in the budget was attributed to the upward adjustment of the Own Source Revenue Collection. 
+=== Page 380 ===
+336
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+The budget was to be financed from the following revenue sources: the equitable share of revenue raised nationally, 
+of Kshs.7.51 billion (69.9 per cent), additional allocations of Kshs.863.10 million (8.0 per cent), a cash balance of 
+Kshs.748.68 million (7.0 per cent) brought forward from FY 2023/24, and Kshs.1.60 billion (14.9 per cent) generated 
+as gross own-source revenue. The own-source revenue includes Kshs.750 million (7.0 per cent) as Facility Improve-
+ment Fund (revenue from health facilities), and, Kshs.850 million (7.9 per cent) as ordinary own-source revenue. A 
+breakdown of the additional allocations is shown in Table 3.349.
+3.29.2 Revenue Performance
+The County received Kshs.9.76 billion in revenues in the review period to fund its development and recurrent ac -
+tivities. This amount represented an increase of 4.6 per cent compared to the amount received in FY 2023/24 of 
+Kshs.9.31 billion. The total revenue consisted of Kshs.7.51 billion from the equitable share of revenue raised nation-
+ally. Other revenue streams included additional allocations from the national government and development part -
+ners, amounting to Kshs.177.13 million, and own-source revenue (OSR) collection of Kshs.1.32 billion. Additionally, 
+the County had a cash balance of Kshs.748.68 million from FY 2023/24.
+The total OSR collection of Kshs.1.32 billion included Facilities Improvement Financing (FIF) of Kshs.534.64 mil -
+lion, and Kshs.785.14 million from other OSR sources. Table 3.350 summarises the total revenue available to the 
+County Government during FY 2024/25. 
+Table 3.350: Murang’a County, Revenue Performance in FY 2024/25
+S/No Revenue Annual Budget Alloca-
+tion (in Kshs)
+Actual Receipts 
+(in Kshs.)
+Actual Receipts as 
+Percentage of Annual 
+Allocation ()
+A. Equitable Share of Revenue Raised Nationally 7,511,867,031 7,511,867,031 100
+Sub Total 7,511,867,031 7,511,867,031 100
+B Conditional Grants
+1 Road Maintenance Fuel Levy Fund 270,941,894 -
+2 Nutritional International Grant 20,000,000 15,000,000 75
+3 IDA- (World Bank) Credit National Agricultural Value 
+Chain Development Project (NAVCDP) 151,515,152 77,187,141 51
+4 IDA (WB) Credit: Kenya Devolution Support Project 
+(KDSP) Level 1 Grant 37,500,000 -
+5 IDA (WB) Credit: Kenya Urban Support Project 
+(KUSP) –Urban Institutional Grant (UIG) 35,000,000 32,309,300 92
+6 IDA (WB) Credit: Kenya Urban Support Project 
+(KUSP) –Urban Development Grant (UDG) 70,743,658 -
+7 DANIDA Grant 9,701,250 -
+8 World Bank (Finance Locally-Led Climate Program 
+(FLLoCA) Level 2Grant 110,729,613 -
+9 Kenya Agricultural Business Development Project 10,918,919 -
+10 Community Health Promoters 46,050,000 -
+11 Aggregated Industrial Park 100,000,000 52,631,579 53
+Sub-Total 863,100,486 177,128,020 21
+C Other Sources of Revenue
+1 Ordinary Own Source Revenue 850,000,000 785,144,014.43 92
+2 Balance b/f from FY2023/24 748,683,568 748,683,568 100
+3 Facility Improvement Fund (FIF) 750,000,000 534,640,180.67 71
+4 Other Revenues 20,000,000 - -
+Sub Total 2,368,683,568 2,068,467,763 87
+Grand Total 10,743,651,085 9,757,462,814 91
+Source: Murang’ a County Treasury
+The County does not have governing legislation on operating ordinary A-I-A and FIF . Figure 113 shows the collec-
+tion trend in own-source revenue from FY 2019/20 to FY 2024/25.
+=== Page 381 ===
+337
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25 
+AUGUST , 2025
+Figure 113: Murang’a County Trend in Own-Source Revenue Collection from FY 2019/20 to FY 2024/25
+Source: Murang’ a County Treasury
+During the year, the County generated Kshs.1.32 billion from its revenue sources, including FIF . This amount was 
+an increase of 18 per cent compared to Kshs.1.12 billion realised in a similar period in FY 2023/24, and was 81.4 per 
+cent of the annual target and 83 per cent of the equitable revenue share disbursed. 
+The revenue streams which contributed the highest OSR receipts are shown in Figure 114.
+Figure 114: Murang’a County Top Own Source Revenue Streams in FY 2024/25 
+Source: Murang’ a County Treasury 
+As shown in the Figure 114, the highest revenue stream, at Kshs.534.64 million, was from FIF/Health/Hospital Fees, 
+accounting for 40 per cent of the total OSR receipts. The County Government indicated that it had automated all the 
+revenue streams.
+3.29.3 Revenue Arrears
+Table 3.351 presents a breakdown of the County’s revenue arrears, primarily from the Facility Improvement Fund.
+=== Page 382 ===
+338
+COUNTY GOVERNMENTS BUDGET IMPLEMENTATION REVIEW REPORT FY 2024/25
+AUGUST , 2025
+Table 3.351: Murang’a County Revenue Arrears as of 30 June 2025
+Revenue Stream Revenue Arrears 
+as of 1 July 2024 
+(Kshs.)
+Progress made in FY 2024/25 OSR Arrears as of 30 
+June 2025 (Kshs.)Waivers 
+(Kshs)
+Arrears paid in 
+the financial year 
+(Kshs)
+Arrears earned 
+in FY 2024/25 
+(Kshs)
+  a b c d f=a-b-c+d
+Facility Improvement Fund 
+(FIF) 0  0  0 0  154,588,805 
+Source: Murang’a County Treasuries
+3.29.4 Borrowing by the County
+The County did not disclose any short-term borrowings as of 30 June 2025.
+3.29.5 Exchequers Approved
+The Controller of Budget approved withdrawals of Kshs.9.18 billion from the CRF account in FY 2024/25, which 
+comprised Kshs.2.28 million (25 per cent) for development programmes and Kshs.6.91 billion (75 per cent) for re -
+current programmes. Analysis of the recurrent exchequers released indicates that Kshs.4.64 million was for employ-
+ee compensation and Kshs.2.26 million for operations and maintenance expenditures.
+The operations and maintenance exchequer analysis indicates that 18 per cent was for domestic travel and 1 per cent 
+for foreign travel. The domestic travel exchequer amounted to Kshs.404.28 million, and included Kshs.170.8 million 
+for the County Executive and Kshs.233.48 million for the County Assembly. The foreign exchequer totalled Kshs.24 
+million, comprising Kshs.22.93 million for the County Executive and Kshs.1.08 million for the County Assembly. 
+As of the closure of FY 2024/25, the County Government’s cash balance in the CRF account was Kshs.117,671,919.
+3.29.6 County Expenditure Review
+The County spent Kshs.9.18 billion on development and recurrent programmes in the reporting period. The ex -
+penditure represented 100 per cent of the total funds released by the CoB. It comprised Kshs.2.28 billion for devel -
+opment programmes and Kshs.6.91 billion for recurrent programmes. Expenditure on development programmes 
+represented an absorption rate of 70.8 per cent, while recurrent expenditure represented 91.8 per cent of the annual 
+recurrent expenditure budget.
+3.29.7 Settlement of Pending Bills
+The County reported pending bills totalling Kshs.1.68 billion as of 30 June 2024. This amount included Kshs.1.59 
+billion from the County Executive and Kshs.91.60 million from the County Assembly. The pending bills from the 
+County Executive consist of Kshs.1.35 billion for recurrent expenditures and Kshs.241.34 million for development 
+expenditures.
+During the year, the County Executive settled pending bills amounting to Kshs.758.65 million. On the other hand, 
+the County Assembly settled pending bills worth Kshs.91.29 million, which was entirely for recurrent activities, the 
+County Assembly had no development pending bills. Table 3.352 provides additional details of pending bills.
+Table 3.352: Murang’a County Pending Bills as of 30 June 2025
+Pending Bills as of 1 
+July 2024 (Kshs.)
+Settled Pending 
+Bills in FY 2024/25 
+(Kshs.)
+Pending bills incurred in 
+FY 2024/25 (Kshs.)
+Outstanding pending bills 
+as of 30 June 2025 (Kshs.
+Mn)
+County Executive
+Recurrent 1,247,880,501 758,650,000 1,012,289,377.13 1,501,519,878.53
+Development 36,980,837 0 296,379,078.93 333,359,915.93
+Total 1,284,861,338 758,650,000 1,308,668,456.06 1,834,879,794.46
+County Assembly
+Recurrent 91,604,561  91,285,761 71,906,694.39 72,225,494
+Development 0 0 0 0
+Total 91,604,561  91,285,761
+ Source: Murang’ a County Treasury

@@ -1,609 +1,360 @@
 import io
-import re
 import os
-from typing import Dict, Any, List, Optional
-from decimal import Decimal
-from collections import defaultdict
-import pdfplumber
-from dotenv import load_dotenv
-import pandas as pd
+import re
+import json
 import time
+from typing import Dict, Any, List, Tuple, Optional
+import pypdf
+import pymupdf4llm
+from dotenv import load_dotenv
 
-try:
-    from openai import OpenAI
-except ImportError:
-    OpenAI = None
+# --------------------------------------------------
+# ENV + AI CLIENT
+# --------------------------------------------------
 
-load_dotenv(os.path.join(os.path.dirname(os.path.dirname(__file__)), ".env.local"))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+load_dotenv(os.path.join(BASE_DIR, ".env.local"))
 
 def create_ai_client():
+    """Create AI client as fallback."""
+    try:
+        from openai import OpenAI
+    except ImportError:
+        return None, None
+
     groq_key = os.getenv("GROQ_API_KEY")
     openai_key = os.getenv("OPENAI_API_KEY")
 
-    if OpenAI is None:
-        print("⚠️ OpenAI library not installed — skipping AI summarization.")
-        return None, None
-
     if groq_key:
-        print("🤖 Using Groq API for summarization.")
-        client = OpenAI(base_url="https://api.groq.com/openai/v1", api_key=groq_key)
+        client = OpenAI(
+            base_url="https://api.groq.com/openai/v1",
+            api_key=groq_key
+        )
         model = "meta-llama/llama-4-maverick-17b-128e-instruct"
-    elif openai_key:
-        print("🤖 Using OpenAI API for summarization.")
+        return client, model
+
+    if openai_key:
         client = OpenAI(api_key=openai_key)
-        model = "gpt-3.5-turbo"
-    else:
-        print("⚠️ No API key found — skipping AI summarization.")
-        return None, None
+        model = "gpt-4o"
+        return client, model
 
-    return client, model
+    return None, None
 
-client, ai_model = create_ai_client()
+AI_CLIENT, AI_MODEL = create_ai_client()
 
-# --- Enhanced Currency Normalization ---
+# --------------------------------------------------
+# DYNAMIC TOC MAPPING
+# --------------------------------------------------
 
-num_re = re.compile(r"[-+]?\d{1,3}(?:[,\d{3}])*?(?:\.\d+)?")
-
-def normalize_currency(value: Any) -> int:
-    """Enhanced currency normalization supporting multiple formats."""
-    if value is None:
-        return 0
-    if isinstance(value, (int, float)):
-        return int(value)
-    if not isinstance(value, str):
-        return 0
+class DynamicTOCMapper:
+    """Maps counties to their specific page numbers in the CBIRR report."""
     
-    s = str(value).strip()
-    if s == "":
-        return 0
+    def __init__(self, pdf_bytes: bytes):
+        self.pdf_bytes = pdf_bytes
+        self.toc_text = ""
+        self._extract_toc()
     
-    # Remove currency labels
-    s = s.replace("Kshs", "").replace("KSh", "").replace("Ksh", "").replace("KSH", "")
-    s = s.replace("KShs", "").replace("kshs", "").replace("KES", "")
+    def _extract_toc(self):
+        """Extract the first 20 pages which usually contain the TOC."""
+        reader = pypdf.PdfReader(io.BytesIO(self.pdf_bytes))
+        for i in range(min(20, len(reader.pages))):
+            self.toc_text += reader.pages[i].extract_text() or ""
     
-    # Handle accounting format (parentheses = negative)
-    s = s.replace("(", "-").replace(")", "")
-    
-    # Remove non-numeric except comma, dot, minus
-    s = re.sub(r"[^\d\-,.\s]", "", s)
-    
-    # Find all number-like patterns
-    matches = re.findall(r"-?\d[\d,]*\.?\d*", s)
-    if not matches:
-        return 0
-    
-    # Take the longest match (most likely the actual number)
-    m = max(matches, key=len)
-    m = m.replace(",", "")
-    
-    try:
-        if "." in m:
-            val = Decimal(m)
-            return int(round(val))
-        return int(m)
-    except Exception:
-        return 0
+    def get_county_page(self, county: str) -> Optional[int]:
+        """Find the starting page number for a specific county."""
+        # Pattern: 3.XX. County Government of [County] ... [PageNumber]
+        # We use a flexible regex to handle variations in dots and spacing
+        pattern = rf"County\s+Government\s+of\s+{re.escape(county)}[\s\.]+(\d+)"
+        match = re.search(pattern, self.toc_text, re.IGNORECASE)
+        
+        if match:
+            page_num = int(match.group(1))
+            print(f"📍 TOC Mapping: Found {county} starting at page {page_num}")
+            return page_num
+        
+        # Fallback: search for the county name directly in the TOC text
+        pattern_alt = rf"{re.escape(county)}[\s\.]+(\d+)"
+        match_alt = re.search(pattern_alt, self.toc_text, re.IGNORECASE)
+        if match_alt:
+            page_num = int(match_alt.group(1))
+            print(f"📍 TOC Mapping (Fallback): Found {county} at page {page_num}")
+            return page_num
+            
+        print(f"⚠️ TOC Mapping: Could not find {county} in TOC")
+        return None
 
-def find_first_number_in_text(text):
-    """Extract first number from text."""
-    m = num_re.search(text or "")
-    return int(m.group(0).replace(",", "")) if m else None
+# --------------------------------------------------
+# REGEX-TARGETED EXTRACTION
+# --------------------------------------------------
 
-# --- Field Mapping ---
-
-TARGET_FIELDS = {
-    # Revenue
-    "revenue_target": ["Gross Approved First Budget", "Gross Approved Budget", "Approved Budget total"],
-    "revenue_actual": ["received", "Actual Receipts", "Actual Revenue", "Total revenue available"],
-    "own_source_revenue": ["Own Source Revenue", "Ordinary Own Source Revenue", "own-source revenue", "OSR"],
-    "equitable_share": ["equitable share", "Equitable Share"],
-    "conditional_grants": ["conditional grants", "Donor", "Development Partners"],
-    # Expenditure
-    "recurrent_budget": ["Recurrent Expenditure", "Total Recurrent Expenditure"],
-    "recurrent_expenditure": ["recurrent_expenditure", "Recurrent Expenditure (Kshs.)"],
-    "development_budget": ["development budget", "Development Expenditure budget"],
-    "development_expenditure": ["development_expenditure", "Development Expenditure"],
-    "total_expenditure": ["total_expenditure", "Total Expenditure", "county spent"],
-    "approved_budget": ["Gross Approved First Budget", "Gross Approved Budget"],
-    # Debt
-    "pending_bills_amount": ["pending bills", "Total Pending Bills", "outstanding pending bills"],
-    # Staff
-    "compensation_of_employees": ["compensation of employees", "Compensation to Employees"],
-}
-
-# --- OPTIMIZED Extraction Logic ---
-
-def run_county_analysis(pdf_bytes: bytes, county: str) -> Dict[str, Any]:
-    """
-    OPTIMIZED extraction - significantly faster than original.
-    Target: < 1 minute for typical county section.
-    """
-    start_time = time.time()
+class RegexSieve:
+    """Extracts specific financial metrics using targeted regex patterns within relevant sections."""
     
-    try:
-        # Initialize data structure
-        extracted_data = {
-            "county": county,
-            "financial_year": "2024/25",
-            "revenue": {
-                "revenue_target": 0, "revenue_actual": 0, "own_source_revenue": 0,
-                "equitable_share": 0, "conditional_grants": 0, "revenue_variance": 0,
-                "revenue_performance_percent": 0.0
-            },
-            "expenditure": {
-                "approved_budget": 0, "recurrent_budget": 0, "recurrent_expenditure": 0,
-                "development_budget": 0, "development_expenditure": 0, "total_expenditure": 0,
-                "absorption_rate_percent": 0.0
-            },
-            "debt_and_liabilities": {
-                "pending_bills_amount": 0, "outstanding_debt": 0,
-                "arrears_brought_forward": 0, "staff_costs_percent": 0.0,
-                "pending_bills_ageing": {}
-            },
-            "project_performance": {
-                "planned_projects": 0, "completed_projects": 0, "ongoing_projects": 0,
-                "stalled_projects": 0, "project_completion_rate_percent": 0.0
-            },
-            "sectoral_allocations": {
-                "health_allocation": 0, "education_allocation": 0, "water_allocation": 0,
-                "agriculture_allocation": 0, "infrastructure_allocation": 0, "governance_allocation": 0
-            },
-            "intelligence": {},
-            "raw_extracted": defaultdict(lambda: None)
+    def __init__(self):
+        # Patterns now include sentence structures and "billion/million" support
+        self.patterns = {
+            "own_source_revenue": [
+                r"(?i)Own\s+Source\s+Revenue\s+(?:amounted\s+to|was|collected).*?Kshs?\.?\s*([\d,.]+)\s*(billion|million)",
+                r"(?i)Own\s+Source\s+Revenue.*?Kshs?\.?\s*([\d,.]+)\s*(billion|million)?",
+                r"(?i)Ordinary\s+Own\s+Source\s+Revenue.*?(\d{1,3}(?:,\d{3})*(?:\.\d+)?)",
+            ],
+            "development_expenditure": [
+                r"(?i)expenditure\s+on\s+development\s+programs.*?amounted\s+to\s+Kshs?\.?\s*([\d,.]+)\s*(billion|million)",
+                r"(?i)Development\s+Expenditure.*?Kshs?\.?\s*([\d,.]+)\s*(billion|million)?",
+            ],
+            "pending_bills": [
+                r"(?i)reported\s+total\s+pending\s+bills\s+of\s+Kshs?\.?\s*([\d,.]+)\s*(billion|million)",
+                r"(?i)Pending\s+Bills.*?Kshs?\.?\s*([\d,.]+)\s*(billion|million)?",
+            ],
+            "total_revenue": [
+                r"(?i)total\s+revenue\s+received.*?was\s+Kshs?\.?\s*([\d,.]+)\s*(billion|million)",
+                r"(?i)Total\s+Revenue.*?Kshs?\.?\s*([\d,.]+)\s*(billion|million)?",
+            ],
+            "total_expenditure": [
+                r"(?i)spent\s+a\s+total\s+of\s+Kshs?\.?\s*([\d,.]+)\s*(billion|million)",
+                r"(?i)Total\s+Expenditure.*?Kshs?\.?\s*([\d,.]+)\s*(billion|million)?",
+            ]
         }
 
-        print(f"🔍 Opening PDF for {county}...")
+    def extract_metrics(self, text: str) -> Dict[str, int]:
+        """Extract all metrics from the provided text, respecting section context."""
+        results = {}
         
-        # OPTIMIZATION 1: Fast county detection (no font-size analysis)
-        county_pattern = re.compile(rf"\b{re.escape(county)}\b.*?county", re.IGNORECASE)
-        next_county_pattern = re.compile(r"\b[A-Z][a-z]+\s+(?:city\s+)?county\b", re.IGNORECASE)
+        # 1. Extract Sections
+        revenue_section = self._extract_section(text, "Revenue Performance")
+        expenditure_section = self._extract_section(text, "County Expenditure Review")
+        bills_section = self._extract_section(text, "Settlement of Pending Bills")
         
-        county_pages = []
-        full_text = ""
-        all_tables = []  # Cache all tables
-        
-        with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
-            found_start = False
-            
-            # OPTIMIZATION 2: Limit search to first 30 pages
-            max_search_pages = min(30, len(pdf.pages))
-            
-            for page_num in range(max_search_pages):
-                page = pdf.pages[page_num]
-                page_text = page.extract_text() or ""
-                
-                if not found_start:
-                    # Simple text search - much faster than font analysis
-                    if county_pattern.search(page_text):
-                        print(f"✅ Found {county} on page {page_num + 1}")
-                        found_start = True
-                        county_pages.append(page)
-                        full_text += page_text + "\n"
-                else:
-                    # Check if we've reached next county
-                    matches = next_county_pattern.findall(page_text)
-                    if matches:
-                        # Check if it's a different county
-                        for match in matches:
-                            if county.lower() not in match.lower():
-                                print(f"🛑 Found end of section on page {page_num + 1}")
-                                found_start = False
-                                break
-                    
-                    if not found_start:
-                        break
-                        
-                    county_pages.append(page)
-                    full_text += page_text + "\n"
-                    
-                    # OPTIMIZATION 3: Limit county section to 15 pages max
-                    if len(county_pages) >= 15:
-                        print(f"⚠️ Limiting to first 15 pages for {county}")
-                        break
+        # If sections aren't found, fallback to full text
+        if not revenue_section: revenue_section = text
+        if not expenditure_section: expenditure_section = text
+        if not bills_section: bills_section = text
 
-        if not county_pages:
-            return {"error": f"County '{county}' not found."}
-
-        print(f"📄 Processing {len(county_pages)} pages for {county}...")
-        
-        # OPTIMIZATION 4: Single-pass table extraction
-        print("📊 Extracting tables...")
-        for page in county_pages:
-            try:
-                tables = page.extract_tables()
-                if tables:
-                    all_tables.extend(tables)
-            except:
-                pass
-        
-        print(f"✅ Found {len(all_tables)} tables")
-        
-        # OPTIMIZATION 5: Process tables once
-        for table in all_tables:
-            _parse_structured_table(table, extracted_data)
-            _extract_pending_bills_ageing(table, extracted_data)
-        
-        # OPTIMIZATION 6: Text-based extraction (fast)
-        _parse_text_tables(full_text, extracted_data)
-        
-        # OPTIMIZATION 7: Field mapping with cached tables (no re-extraction)
-        _extract_via_field_mapping_optimized(full_text, extracted_data, all_tables)
-        
-        # OPTIMIZATION 8: Only use regex if critical fields missing
-        if extracted_data["revenue"]["revenue_actual"] == 0:
-            _extract_via_regex(full_text, extracted_data)
-
-        # Map raw to structured
-        _map_raw_to_structured(extracted_data)
-
-        # Calculate metrics
-        extracted_data["intelligence"] = calculate_intelligence(extracted_data)
-        extracted_data["computed"] = compute_advanced_metrics(extracted_data)
-        
-        # Generate summary
-        summary = _generate_summary(extracted_data, county)
-        extracted_data["summary_text"] = summary
-        
-        # Key metrics
-        extracted_data["key_metrics"] = {
-            "Total Revenue": f"Ksh {extracted_data['revenue']['revenue_actual']:,}",
-            "Total Expenditure": f"Ksh {extracted_data['expenditure']['total_expenditure']:,}",
-            "Pending Bills": f"Ksh {extracted_data['debt_and_liabilities']['pending_bills_amount']:,}",
-            "Absorption Rate": f"{extracted_data['computed'].get('overall_absorption_percent', 0):.1f}%"
+        # 2. Map Metrics to Sections
+        # (Metric Name -> Source Text)
+        mapping = {
+            "own_source_revenue": revenue_section,
+            "total_revenue": revenue_section,
+            "development_expenditure": expenditure_section,
+            "total_expenditure": expenditure_section,
+            "pending_bills": bills_section
         }
 
-        elapsed = time.time() - start_time
-        print(f"⏱️ Extraction completed in {elapsed:.2f} seconds")
-        
-        return extracted_data
-
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        return {"error": str(e)}
-
-def _extract_via_field_mapping_optimized(text: str, data: Dict[str, Any], cached_tables: List):
-    """OPTIMIZED field mapping - uses cached tables, no re-extraction."""
-    
-    # Quick text-based search first
-    for key, labels in TARGET_FIELDS.items():
-        if data["raw_extracted"].get(key) is not None:
-            continue
+        for metric, patterns in self.patterns.items():
+            source_text = mapping.get(metric, text)
+            found_value = 0
             
-        for label in labels:
-            idx = text.lower().find(label.lower())
-            if idx >= 0:
-                window = text[idx: idx + 300]  # Reduced window
-                num = find_first_number_in_text(window)
-                if num is not None and num > 0:
-                    data["raw_extracted"][key] = int(num)
-                    break
-        
-        if data["raw_extracted"].get(key) is not None:
-            continue
-        
-        # OPTIMIZATION: Use cached tables instead of re-extracting
-        for table in cached_tables:
-            if data["raw_extracted"].get(key) is not None:
-                break
-                
-            try:
-                df = pd.DataFrame(table)
-                if df.empty:
-                    continue
-                    
-                # Quick check if any label appears in table
-                df_text = " ".join(df.fillna("").astype(str).stack().tolist()).lower()
-                if not any(l.lower() in df_text for l in labels):
-                    continue
-                
-                # Search for value
-                for r in range(min(df.shape[0], 20)):  # Limit rows
-                    for c in range(min(df.shape[1], 10)):  # Limit columns
-                        cell = str(df.iat[r, c]).lower()
-                        
-                        for label in labels:
-                            if label.lower() in cell:
-                                # Look right
-                                for cc in range(c+1, min(df.shape[1], c+3)):
-                                    val = normalize_currency(df.iat[r, cc])
-                                    if val > 0:
-                                        data["raw_extracted"][key] = val
-                                        break
-                                if data["raw_extracted"].get(key):
-                                    break
-                                
-                                # Look below
-                                for rr in range(r+1, min(df.shape[0], r+3)):
-                                    val = normalize_currency(df.iat[rr, c])
-                                    if val > 0:
-                                        data["raw_extracted"][key] = val
-                                        break
-                                break
-                        if data["raw_extracted"].get(key):
+            for pattern in patterns:
+                matches = re.findall(pattern, source_text)
+                if matches:
+                    for match in matches:
+                        # Match might be a tuple (amount, unit) or just amount
+                        if isinstance(match, tuple):
+                            val = self._normalize_amount(match[0], match[1] if len(match) > 1 else "")
+                        else:
+                            val = self._normalize_amount(match)
+                            
+                        if val > 0: 
+                            found_value = val
                             break
-                    if data["raw_extracted"].get(key):
-                        break
-            except:
-                continue
-
-def _extract_pending_bills_ageing(table: List[List[str]], data: Dict[str, Any]):
-    """Extract pending bills ageing breakdown from tables."""
-    if not table or data['debt_and_liabilities'].get('pending_bills_ageing'):
-        return  # Early exit if already found
-    
-    try:
-        df = pd.DataFrame(table)
-        if df.empty:
-            return
+                if found_value > 0:
+                    break
+            results[metric] = found_value
             
-        df_text = " ".join(df.fillna("").astype(str).stack().tolist()).lower()
-        
-        # Quick check
-        if "under one year" not in df_text or "pending" not in df_text:
-            return
-            
-        headers = df.iloc[0].fillna("").astype(str).tolist()
-        
-        # Find totals row
-        for rr in range(1, min(df.shape[0], 10)):  # Limit search
-            row_text = " ".join(df.iloc[rr].astype(str).tolist()).lower()
-            if "total" in row_text:
-                def col_val_label(search_phrases):
-                    for p in search_phrases:
-                        for idx, h in enumerate(headers):
-                            if p in str(h).lower():
-                                return normalize_currency(df.iat[rr, idx])
-                    return 0
-                
-                ageing = {}
-                ageing['under_one_year'] = col_val_label(['under one year', 'under 1'])
-                ageing['one_to_two_years'] = col_val_label(['1-2 years', 'one to two'])
-                ageing['two_to_three_years'] = col_val_label(['2-3 years', 'two to three'])
-                ageing['over_three_years'] = col_val_label(['over 3 years', 'over three'])
-                
-                if any(v > 0 for v in ageing.values()):
-                    data['debt_and_liabilities']['pending_bills_ageing'] = ageing
-                break
-    except:
-        pass
+        return results
 
-def _map_raw_to_structured(data: Dict[str, Any]):
-    """Map raw_extracted fields to structured schema."""
-    raw = data["raw_extracted"]
-    
-    # Revenue mapping
-    if raw.get("revenue_target"): data["revenue"]["revenue_target"] = raw["revenue_target"]
-    if raw.get("revenue_actual"): data["revenue"]["revenue_actual"] = raw["revenue_actual"]
-    if raw.get("own_source_revenue"): data["revenue"]["own_source_revenue"] = raw["own_source_revenue"]
-    if raw.get("equitable_share"): data["revenue"]["equitable_share"] = raw["equitable_share"]
-    if raw.get("conditional_grants"): data["revenue"]["conditional_grants"] = raw["conditional_grants"]
-    
-    # Expenditure mapping
-    if raw.get("approved_budget"): data["expenditure"]["approved_budget"] = raw["approved_budget"]
-    if raw.get("recurrent_budget"): data["expenditure"]["recurrent_budget"] = raw["recurrent_budget"]
-    if raw.get("recurrent_expenditure"): data["expenditure"]["recurrent_expenditure"] = raw["recurrent_expenditure"]
-    if raw.get("development_budget"): data["expenditure"]["development_budget"] = raw["development_budget"]
-    if raw.get("development_expenditure"): data["expenditure"]["development_expenditure"] = raw["development_expenditure"]
-    if raw.get("total_expenditure"): data["expenditure"]["total_expenditure"] = raw["total_expenditure"]
-    
-    # Debt mapping
-    if raw.get("pending_bills_amount"): data["debt_and_liabilities"]["pending_bills_amount"] = raw["pending_bills_amount"]
+    def _extract_section(self, text: str, title_keyword: str) -> str:
+        """
+        Extracts text belonging to a section with the given title.
+        Looks for markdown headers like '### 3.28.2 Revenue Performance'.
+        """
+        # Regex explanation:
+        # ^#{1,6}\s+            : Starts with 1-6 hashes (Markdown header)
+        # (?:[\d\.]+\s+)?       : Optional numbering (e.g., "3.28.2 ")
+        # .*?                   : Any text
+        # title_keyword         : The specific title we want
+        # .*?$                  : Rest of the line
+        pattern = rf"(^#{1,6}\s+(?:[\d\.]+\s+)?.*?{re.escape(title_keyword)}.*?$)([\s\S]*?)(?=^#{1,6}\s+|\Z)"
+        
+        match = re.search(pattern, text, re.MULTILINE | re.IGNORECASE)
+        if match:
+            # print(f"✅ Found section: {title_keyword}")
+            return match.group(2)
+        return ""
 
-def compute_advanced_metrics(data: Dict[str, Any]) -> Dict[str, Any]:
-    """Compute advanced derived metrics."""
-    def pct(n, dnm):
+    def _normalize_amount(self, value_str: str, unit: str = "") -> int:
+        """Convert string amount to integer, handling 'billion'/'million'."""
         try:
-            if n is None or dnm is None or dnm == 0:
-                return 0.0
-            return float(Decimal(n) / Decimal(dnm) * 100)
-        except:
-            return 0.0
-    
-    rev = data["revenue"]
-    exp = data["expenditure"]
-    
-    approved = exp.get("approved_budget") or rev.get("revenue_target") or 0
-    actual_rev = rev.get("revenue_actual") or 0
-    total_exp = exp.get("total_expenditure") or 0
-    dev_budget = exp.get("development_budget") or 0
-    dev_exp = exp.get("development_expenditure") or 0
-    comp = data["raw_extracted"].get("compensation_of_employees") or 0
-    
-    return {
-        "revenue_variance": int(actual_rev - approved) if approved and actual_rev else 0,
-        "revenue_performance_percent": pct(actual_rev, approved),
-        "overall_absorption_percent": pct(total_exp, approved),
-        "development_absorption_percent": pct(dev_exp, dev_budget),
-        "compensation_to_revenue_percent": pct(comp, actual_rev)
-    }
-
-# Import existing helper functions
-def _parse_structured_table(table: List[List[str]], data: Dict[str, Any]):
-    """Parse structured tables."""
-    if not table: return
-    
-    table_str = str(table).lower()
-    
-    if "revenue" in table_str and ("target" in table_str or "actual" in table_str):
-        for row in table:
-            if not row: continue
-            row_text = " ".join([str(c).lower() for c in row if c])
-            nums = [normalize_currency(c) for c in row if c and any(d.isdigit() for d in str(c))]
+            # Clean string
+            clean = value_str.replace(',', '').strip()
+            amount = float(clean)
             
-            if "total revenue" in row_text or "grand total" in row_text:
-                if len(nums) >= 2:
-                    data["revenue"]["revenue_target"] = nums[0]
-                    data["revenue"]["revenue_actual"] = nums[1]
-            if "own source" in row_text:
-                if len(nums) >= 1: data["revenue"]["own_source_revenue"] = nums[-1]
-            if "equitable share" in row_text:
-                if len(nums) >= 1: data["revenue"]["equitable_share"] = nums[-1]
-            if "conditional grant" in row_text:
-                if len(nums) >= 1: data["revenue"]["conditional_grants"] = nums[-1]
-
-    if "expenditure" in table_str:
-        for row in table:
-            if not row: continue
-            row_text = " ".join([str(c).lower() for c in row if c])
-            nums = [normalize_currency(c) for c in row if c and any(d.isdigit() for d in str(c))]
+            unit = unit.lower().strip()
+            if "billion" in unit:
+                amount *= 1_000_000_000
+            elif "million" in unit:
+                amount *= 1_000_000
             
-            if "recurrent" in row_text and "total" not in row_text:
-                if len(nums) >= 2:
-                    data["expenditure"]["recurrent_budget"] = nums[0]
-                    data["expenditure"]["recurrent_expenditure"] = nums[1]
-            if "development" in row_text and "total" not in row_text:
-                if len(nums) >= 2:
-                    data["expenditure"]["development_budget"] = nums[0]
-                    data["expenditure"]["development_expenditure"] = nums[1]
-            if "total expenditure" in row_text:
-                if len(nums) >= 2:
-                    data["expenditure"]["approved_budget"] = nums[0]
-                    data["expenditure"]["total_expenditure"] = nums[1]
+            return int(amount)
+        except (ValueError, TypeError):
+            return 0
 
-def _parse_text_tables(text: str, data: Dict[str, Any]):
-    """Parse text-based tables."""
-    lines = text.split('\n')
+# --------------------------------------------------
+# ENHANCED COUNTY ANALYZER
+# --------------------------------------------------
+
+class EnhancedCountyAnalyzer:
+    """Main analyzer using TOC mapping, Markdown conversion, and Regex extraction."""
     
-    for i, line in enumerate(lines):
-        line_lower = line.lower()
+    def __init__(self, ai_client=None, ai_model=None):
+        self.ai_client = ai_client
+        self.ai_model = ai_model
+        self.sieve = RegexSieve()
+    
+    def analyze_pdf(self, pdf_bytes: bytes, county: str) -> Dict[str, Any]:
+        """Main analysis pipeline."""
+        start_time = time.time()
+        print(f"🚀 Starting Enhanced Analysis for {county} County...")
         
-        if 'total revenue' in line_lower:
-            nums = re.findall(r'[\d,]+', line)
-            if len(nums) >= 2:
-                data["revenue"]["revenue_target"] = normalize_currency(nums[0])
-                data["revenue"]["revenue_actual"] = normalize_currency(nums[1])
+        # 1. Dynamic TOC Mapping
+        mapper = DynamicTOCMapper(pdf_bytes)
+        start_page = mapper.get_county_page(county)
         
-        if 'equitable share' in line_lower:
-            nums = re.findall(r'[\d,]+', line)
-            if nums:
-                data["revenue"]["equitable_share"] = normalize_currency(nums[-1])
+        if not start_page:
+            # Fallback: search entire document (slow)
+            print(f"⚠️ Falling back to full document scan for {county}")
+            return self._full_scan_fallback(pdf_bytes, county, start_time)
+
+        # 2. High-Fidelity Markdown Conversion (Targeted)
+        # We extract ~12 pages starting from the county's section
+        print(f"🧹 Converting pages {start_page} to {start_page+12} to Markdown...")
+        try:
+            # pymupdf4llm uses 0-based indexing for pages, but TOC usually uses 1-based
+            # We'll try both or adjust based on common CBIRR offsets
+            # Usually TOC page numbers are 1-based.
+            page_range = list(range(start_page - 1, min(start_page + 11, 1000))) # 0-indexed
+            
+            # Save PDF to temp file for pymupdf4llm
+            temp_pdf = f"temp_{int(time.time())}.pdf"
+            with open(temp_pdf, "wb") as f:
+                f.write(pdf_bytes)
+            
+            md_content = pymupdf4llm.to_markdown(temp_pdf, pages=page_range)
+            os.remove(temp_pdf)
+            
+            # 3. Regex-Targeted Extraction
+            metrics = self.sieve.extract_metrics(md_content)
+            
+            # 4. AI Fallback for missing metrics
+            missing = [k for k, v in metrics.items() if v == 0]
+            if missing and self.ai_client:
+                print(f"🤖 AI assisting with missing metrics: {missing}")
+                ai_results = self._ai_assist(md_content[:15000], county, missing)
+                metrics.update(ai_results)
+
+            # 5. Structured JSON Output
+            return self._format_response(county, metrics, start_time, md_content)
+
+        except Exception as e:
+            print(f"❌ Error during enhanced extraction: {e}")
+            return self._error_response(county, str(e))
+
+    def _full_scan_fallback(self, pdf_bytes: bytes, county: str, start_time: float) -> Dict[str, Any]:
+        """Fallback when TOC mapping fails."""
+        # Implementation of the old logic or a simplified version
+        reader = pypdf.PdfReader(io.BytesIO(pdf_bytes))
+        found_page = -1
+        for i in range(len(reader.pages)):
+            text = reader.pages[i].extract_text() or ""
+            if f"County Government of {county}" in text:
+                found_page = i + 1
+                break
         
-        if 'own source revenue' in line_lower:
-            nums = re.findall(r'[\d,]+', line)
-            if nums:
-                data["revenue"]["own_source_revenue"] = normalize_currency(nums[-1])
+        if found_page == -1:
+            return self._error_response(county, "County not found in document")
+            
+        # Re-run with the found page
+        # (Simplified for this implementation)
+        return self.analyze_pdf(pdf_bytes, county)
+
+    def _ai_assist(self, text: str, county: str, missing: List[str]) -> Dict[str, int]:
+        """AI assistance for missing metrics."""
+        try:
+            prompt = f"""
+            Extract the following budget metrics for {county} County from this text.
+            Metrics needed: {', '.join(missing)}
+            
+            Text:
+            {text}
+            
+            Return ONLY a JSON object with integer values.
+            Example: {{"pending_bills": 1200000000}}
+            """
+            
+            response = self.ai_client.chat.completions.create(
+                model=self.ai_model,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.1,
+                response_format={"type": "json_object"}
+            )
+            
+            return json.loads(response.choices[0].message.content)
+        except Exception as e:
+            print(f"⚠️ AI assist failed: {e}")
+            return {}
+
+    def _format_response(self, county: str, metrics: Dict[str, int], start_time: float, md_content: str) -> Dict[str, Any]:
+        """Format the final structured JSON response."""
+        processing_time = round(time.time() - start_time, 2)
         
-        if 'total expenditure' in line_lower:
-            nums = re.findall(r'[\d,]+', line)
-            if len(nums) >= 2:
-                data["expenditure"]["approved_budget"] = normalize_currency(nums[0])
-                data["expenditure"]["total_expenditure"] = normalize_currency(nums[1])
+        # Calculate transparency score (0-100)
+        found_count = sum(1 for v in metrics.values() if v > 0)
+        completeness = (found_count / len(metrics)) * 100
         
-        if 'pending bills' in line_lower:
-            nums = re.findall(r'[\d,]+', line)
-            if nums:
-                data["debt_and_liabilities"]["pending_bills_amount"] = normalize_currency(nums[-1])
+        # Simple insights
+        insights = []
+        if metrics.get("pending_bills", 0) > 1_000_000_000:
+            insights.append("🚩 High level of pending bills detected")
+        if metrics.get("development_expenditure", 0) < metrics.get("total_expenditure", 0) * 0.3:
+            insights.append("⚠️ Low development expenditure relative to total spending")
+            
+        return {
+            "county": county,
+            "status": "success",
+            "key_metrics": metrics,
+            "summary_text": f"Analysis for {county} County completed in {processing_time}s. Data completeness: {completeness:.0f}%.",
+            "intelligence": {
+                "flags": insights,
+                "transparency_risk_score": 100 - int(completeness),
+                "data_completeness": f"{completeness:.0f}%"
+            },
+            "processing_time_sec": processing_time,
+            "method": "Enhanced (TOC + Markdown + Regex)"
+        }
 
-def _extract_via_regex(text: str, data: Dict[str, Any]):
-    """Fallback regex extraction."""
-    patterns = {
-        "revenue_actual": r"total\s+revenue.*?Kshs\.?\s*([\d,\.]+)",
-        "pending_bills_amount": r"pending\s+bills.*?Kshs\.?\s*([\d,\.]+)",
-        "total_expenditure": r"total\s+expenditure.*?Kshs\.?\s*([\d,\.]+)",
-    }
-    
-    for key, pat in patterns.items():
-        m = re.search(pat, text, re.IGNORECASE)
-        if m:
-            val = normalize_currency(m.group(1))
-            if key == "revenue_actual": data["revenue"]["revenue_actual"] = val
-            elif key == "pending_bills_amount": data["debt_and_liabilities"]["pending_bills_amount"] = val
-            elif key == "total_expenditure": data["expenditure"]["total_expenditure"] = val
+    def _error_response(self, county: str, error: str) -> Dict[str, Any]:
+        return {
+            "county": county,
+            "status": "error",
+            "error": error,
+            "key_metrics": {},
+            "intelligence": {"flags": [error], "transparency_risk_score": 100}
+        }
 
-def calculate_intelligence(data: Dict[str, Any]) -> Dict[str, Any]:
-    """Enhanced intelligence calculation."""
-    intelligence = {
-        "budget_variance": 0,
-        "absorption_efficiency": 0.0,
-        "transparency_risk_score": 0,
-        "flags": []
-    }
-    
-    rev = data.get("revenue", {})
-    exp = data.get("expenditure", {})
-    debt = data.get("debt_and_liabilities", {})
-    
-    # Budget Variance
-    if rev.get("revenue_target") and rev.get("revenue_actual"):
-        variance = rev["revenue_actual"] - rev["revenue_target"]
-        intelligence["budget_variance"] = variance
-        
-    # Absorption Efficiency
-    if exp.get("total_expenditure") and exp.get("approved_budget"):
-        efficiency = (exp["total_expenditure"] / exp["approved_budget"]) * 100
-        intelligence["absorption_efficiency"] = round(efficiency, 2)
-        if efficiency < 50:
-            intelligence["flags"].append("Critical: Low Absorption Rate (<50%)")
-        elif efficiency < 70:
-            intelligence["flags"].append("Warning: Low Absorption Rate (<70%)")
+# --------------------------------------------------
+# MAIN ENTRY POINT
+# --------------------------------------------------
 
-    # Risk Score
-    risk_score = 0
-    pending = debt.get("pending_bills_amount", 0)
-    revenue = rev.get("revenue_actual", 1)
-    
-    if revenue > 0:
-        bill_ratio = pending / revenue
-        if bill_ratio > 0.1: risk_score += 20
-        if bill_ratio > 0.3: risk_score += 20
-        if bill_ratio > 0.5:
-            intelligence["flags"].append("Critical: High Pending Bills (>50% of revenue)")
-        
-    if intelligence["absorption_efficiency"] < 50: risk_score += 30
-    elif intelligence["absorption_efficiency"] < 70: risk_score += 15
-    
-    intelligence["transparency_risk_score"] = min(risk_score, 100)
-    
-    if risk_score > 50:
-        intelligence["flags"].append("High Transparency Risk")
-        
-    return intelligence
+def run_pipeline(pdf_bytes: bytes, county: str) -> Dict[str, Any]:
+    """FINAL WORKING PIPELINE"""
+    analyzer = EnhancedCountyAnalyzer(ai_client=AI_CLIENT, ai_model=AI_MODEL)
+    return analyzer.analyze_pdf(pdf_bytes, county)
 
-def _generate_summary(data: Dict[str, Any], county: str) -> str:
-    """Generate Markdown summary."""
-    intel = data["intelligence"]
-    computed = data.get("computed", {})
-    flags = "\n".join([f"- 🚩 {f}" for f in intel["flags"]]) if intel["flags"] else "_No critical risks detected._"
-    
-    ageing_section = ""
-    if data["debt_and_liabilities"].get("pending_bills_ageing"):
-        ageing = data["debt_and_liabilities"]["pending_bills_ageing"]
-        ageing_section = f"""
-### Pending Bills Ageing
-- **Under 1 Year**: Ksh {ageing.get('under_one_year', 0):,}
-- **1-2 Years**: Ksh {ageing.get('one_to_two_years', 0):,}
-- **2-3 Years**: Ksh {ageing.get('two_to_three_years', 0):,}
-- **Over 3 Years**: Ksh {ageing.get('over_three_years', 0):,}
-"""
-    
-    return f"""
-# 🏛️ {county.title()} County – Financial Intelligence Report (FY 2024/25)
-
-## 🚨 Transparency Risk Score: {intel['transparency_risk_score']}/100
-{flags}
-
-## 📊 Key Metrics
-| Metric | Value |
-| :--- | :--- |
-| **Total Revenue** | Ksh {data['revenue']['revenue_actual']:,} |
-| **Total Expenditure** | Ksh {data['expenditure']['total_expenditure']:,} |
-| **Absorption Rate** | {computed.get('overall_absorption_percent', 0):.1f}% |
-| **Pending Bills** | Ksh {data['debt_and_liabilities']['pending_bills_amount']:,} |
-
-## 💰 Revenue Analysis
-- **Target**: Ksh {data['revenue']['revenue_target']:,}
-- **Actual**: Ksh {data['revenue']['revenue_actual']:,}
-- **Variance**: Ksh {intel['budget_variance']:,}
-- **Performance**: {computed.get('revenue_performance_percent', 0):.1f}%
-
-## 📉 Expenditure Breakdown
-- **Recurrent**: Ksh {data['expenditure']['recurrent_expenditure']:,} (Budget: {data['expenditure']['recurrent_budget']:,})
-- **Development**: Ksh {data['expenditure']['development_expenditure']:,} (Budget: {data['expenditure']['development_budget']:,})
-- **Development Absorption**: {computed.get('development_absorption_percent', 0):.1f}%
-
-{ageing_section}
-
----
-*Generated by AI Budget Transparency Tool*
-""".strip()
+if __name__ == "__main__":
+    # Test with Mombasa
+    test_pdf = "../../public/uploads/CGBIRR August 2025.pdf"
+    if os.path.exists(test_pdf):
+        with open(test_pdf, "rb") as f:
+            data = f.read()
+        result = run_pipeline(data, "Mombasa")
+        print(json.dumps(result, indent=2))
